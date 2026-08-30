@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Projects | Century Engineering Contractors</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="../navbar/style.css" rel="stylesheet">
+  <link href="./allprojects.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container navbar-inner">
+      <a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header"><a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav mx-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="../navbar/aboutus.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../services/allservices.html">Services</a></li><li class="nav-item"><a class="nav-link active" href="./allprojects.html">Projects</a></li><li class="nav-item"><a class="nav-link" href="../index.html#clients-partners">Clients | Partners</a></li><li class="nav-item"><a class="nav-link" href="../index.html#careers">Careers</a></li><li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li></ul>
+          <a href="#contact" class="login-button">Get a Quote</a>
+        </div>
+      </div>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="projects-hero" aria-labelledby="projects-title">
+      <div class="projects-hero-image" aria-hidden="true"></div><div class="projects-hero-overlay" aria-hidden="true"></div>
+      <div class="container projects-hero-content"><span>OUR</span><h1 id="projects-title">PROJECTS</h1><i aria-hidden="true"></i><nav class="projects-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><strong>Projects</strong></nav></div>
+    </section>
+
+    <section class="projects-content" aria-label="Project portfolio">
+      <div class="container">
+        <div class="project-filters" role="group" aria-label="Filter projects by sector">
+          <button class="filter-btn active" type="button" data-filter="all"><i class="bi bi-grid"></i><span>All Projects</span></button>
+          <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Power &amp; Energy</span></button>
+          <button class="filter-btn" type="button" data-filter="buildings"><i class="bi bi-buildings"></i><span>Buildings</span></button>
+          <button class="filter-btn" type="button" data-filter="marine"><i class="bi bi-water"></i><span>Marine &amp; Civil</span></button>
+          <button class="filter-btn" type="button" data-filter="industrial"><i class="bi bi-building-gear"></i><span>Industrial &amp; Infrastructure</span></button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card" data-category="power"><img src="../images/B58A4353.jpg" alt="Transmission line construction"><div class="project-card-body"><span>Power &amp; Energy</span><h2>220kV Transmission Line</h2><p><i class="bi bi-geo-alt-fill"></i> Shango – Birembo, Rwanda</p><a href="../servicesdetails/powertransmission.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="buildings"><img src="../images/cec-about-reference.png" alt="EPCA Group Headquarters"><div class="project-card-body"><span>Buildings</span><h2>EPCA Group Headquarters</h2><p><i class="bi bi-geo-alt-fill"></i> Kigali, Rwanda</p><a href="../allprojectsdetails.html/epcaheadquater.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="marine"><img src="../images/rubavu port.jpg" alt="Port of Rubavu"><div class="project-card-body"><span>Marine &amp; Civil</span><h2>Port of Rubavu</h2><p><i class="bi bi-geo-alt-fill"></i> Rubavu, Rwanda</p><a href="../servicesdetails/marine.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="marine"><img src="../images/Rusizi port.jpg" alt="Rusizi Port"><div class="project-card-body"><span>Marine &amp; Civil</span><h2>Rusizi Port</h2><p><i class="bi bi-geo-alt-fill"></i> Rusizi, Rwanda</p><a href="../servicesdetails/marine.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+
+          <article class="project-card" data-category="buildings"><img src="../images/rubavu2.PNG" alt="Lebanon Hotel"><div class="project-card-body"><span>Buildings</span><h2>Lebanon Hotel (3 Star)</h2><p><i class="bi bi-geo-alt-fill"></i> Remera, Kigali</p><a href="../servicesdetails/building.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="buildings"><img src="../images/rubavu3.PNG" alt="Trinity International School"><div class="project-card-body"><span>Buildings</span><h2>Trinity International School</h2><p><i class="bi bi-geo-alt-fill"></i> Nyarutarama, Kigali</p><a href="../servicesdetails/building.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="buildings"><img src="../images/rubavu4.PNG" alt="Luxury Apartments Kagarama"><div class="project-card-body"><span>Buildings</span><h2>Luxury Apartments – Kagarama</h2><p><i class="bi bi-geo-alt-fill"></i> Kagarama, Kigali</p><a href="../servicesdetails/building.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="buildings"><img src="../images/rubavu5.PNG" alt="Akagera Game Lodge"><div class="project-card-body"><span>Buildings</span><h2>Akagera Game Lodge</h2><p><i class="bi bi-geo-alt-fill"></i> Akagera National Park</p><a href="../servicesdetails/building.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+
+          <article class="project-card" data-category="buildings"><img src="../images/keya-hpp.jpg" alt="Residential House Kimihurura"><div class="project-card-body"><span>Buildings</span><h2>Residential House – Kimihurura</h2><p><i class="bi bi-geo-alt-fill"></i> Kimihurura, Kigali</p><a href="../servicesdetails/building.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="power"><img src="../images/nkora-mhpp.jpg" alt="Hydropower works"><div class="project-card-body"><span>Power &amp; Energy</span><h2>Keya, Nkora &amp; Cyimbili HPP Works</h2><p><i class="bi bi-geo-alt-fill"></i> Rwanda</p><a href="../servicesdetails/powertransmission.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="industrial"><img src="../images/cyimbili-mhpp.jpg" alt="Kanombe Warehouses"><div class="project-card-body"><span>Industrial &amp; Infrastructure</span><h2>Kanombe Warehouses</h2><p><i class="bi bi-geo-alt-fill"></i> Kanombe, Kigali</p><a href="../servicesdetails/civil&amp;engineering.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="marine"><img src="../images/Marineservice.jpg" alt="Karongi Auxiliary Quay"><div class="project-card-body"><span>Marine &amp; Civil</span><h2>Karongi Auxiliary Quay</h2><p><i class="bi bi-geo-alt-fill"></i> Karongi, Rwanda</p><a href="../servicesdetails/marine.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+        </div>
+
+       
+
+        
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.filter-btn').forEach((button) => button.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      document.querySelectorAll('.project-card').forEach((card) => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
+    }));
+  </script>
+</body>
+</html>
