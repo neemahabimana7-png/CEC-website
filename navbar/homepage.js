@@ -6,19 +6,26 @@ const projectNext = document.getElementById('projectNext');
 const aboutImage = document.querySelector('.about-image');
 let currentSlide = 0;
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 30);
+let scrollFramePending = false;
 
-  if (aboutImage) {
+function updateScrollEffects() {
+  scrollFramePending = false;
+  navbar?.classList.toggle('scrolled', window.scrollY > 30);
+  if (aboutImage && window.innerWidth > 992 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const rect = aboutImage.getBoundingClientRect();
-    if (window.innerWidth > 992) {
-      const offset = Math.min(20, Math.max(-20, (window.scrollY - rect.top) * 0.01));
-      aboutImage.style.transform = `translateY(${offset}px) scale(1.06)`;
-    } else {
-      aboutImage.style.transform = 'translateY(0) scale(1.02)';
-    }
+    const offset = Math.min(20, Math.max(-20, (window.innerHeight / 2 - rect.top) * 0.025));
+    aboutImage.style.transform = `translate3d(0, ${offset}px, 0) scale(1.06)`;
   }
-});
+}
+
+window.addEventListener('scroll', () => {
+  if (!scrollFramePending) {
+    scrollFramePending = true;
+    requestAnimationFrame(updateScrollEffects);
+  }
+}, { passive: true });
+window.addEventListener('resize', updateScrollEffects, { passive: true });
+updateScrollEffects();
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -207,4 +214,24 @@ if ('IntersectionObserver' in window && groupRevealItems.length) {
   groupRevealItems.forEach((item) => groupObserver.observe(item));
 } else {
   groupRevealItems.forEach((item) => item.classList.add('is-visible'));
+}
+
+// Keep the large decorative video out of the critical loading path.
+const heroVideo = document.querySelector('.hero-video');
+const canLoadHeroVideo = heroVideo && !navigator.connection?.saveData && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (canLoadHeroVideo) {
+  const loadHeroVideo = () => {
+    const source = heroVideo.querySelector('source[data-src]');
+    if (!source) return;
+    source.src = source.dataset.src;
+    source.removeAttribute('data-src');
+    heroVideo.load();
+    heroVideo.play().catch(() => {});
+  };
+
+  window.addEventListener('load', () => {
+    if ('requestIdleCallback' in window) requestIdleCallback(loadHeroVideo, { timeout: 1500 });
+    else setTimeout(loadHeroVideo, 400);
+  }, { once: true });
 }

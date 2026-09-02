@@ -18,7 +18,7 @@ body { margin: 0; color: var(--project-ink); background: var(--project-bg); }
 
 .projects-content { padding: 24px 0 42px; background: linear-gradient(180deg, #fff 0%, var(--project-bg) 100%); }
 .project-filters { display: grid; grid-template-columns: repeat(5, 1fr); margin: 0 0 24px; border: 0; background: #fff; }
-.filter-btn { position: relative; display: flex; min-height: 78px; align-items: center; justify-content: center; gap: 14px; padding: 12px 18px; border: 0; border-right: 1px solid #ccd0d6; background: transparent; color: var(--project-ink); font-size: 13px; font-weight: 800; line-height: 1.25; text-transform: uppercase; transition: color .25s ease; }
+.filter-btn { position: relative; display: flex; min-height: 78px; align-items: center; justify-content: center; gap: 14px; padding: 12px 18px; border: 0; border-right: 1px solid #ccd0d6; background: transparent; color: var(--project-ink); font-size: 14px; font-weight: 800; line-height: 1.25; text-transform: uppercase; transition: color .25s ease; }
 .filter-btn:last-child { border-right: 0; }
 .filter-btn i { color: var(--project-ink); font-size: 28px; font-weight: 400; transition: color .25s ease; }
 .filter-btn::after { content: ''; position: absolute; right: 18px; bottom: 0; left: 18px; height: 2px; background: transparent; }
@@ -89,7 +89,7 @@ body { margin: 0; color: var(--project-ink); background: var(--project-bg); }
   .projects-hero, .projects-hero-content { min-height: 390px; }
   .projects-hero-overlay { background: rgba(1,26,57,.82); }
   .projects-hero p { max-width: 100%; }
-  .filter-btn { gap: 8px; font-size: 10px; }
+  .filter-btn { gap: 8px; font-size: 14px; }
   .projects-grid { grid-template-columns: 1fr; }
   .project-card > img { height: 240px; }
   .sector-band { grid-template-columns: 1fr 1fr; gap: 20px 0; }

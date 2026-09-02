@@ -13,14 +13,14 @@
     <link href="../navbar/style.css" rel="stylesheet">
     <link href="./marine.css" rel="stylesheet">
 </head>
-<body>
+<body id="top">
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container navbar-inner">
-    <a class="navbar-brand me-auto" href="#home"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a>
+    <a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <a class="navbar-brand me-auto" href="#home"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a>
+        <a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -28,12 +28,12 @@
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../navbar/aboutus.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link active" href="../services/allservices.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#clients-partners">Clients | Partners</a></li>
-          <li class="nav-item"><a class="nav-link" href="#careers">Careers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="../allprojects/allprojects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../navbar/clients.html">Clients | Partners</a></li>
+          <li class="nav-item"><a class="nav-link" href="../navbar/careers.html">Careers</a></li>
+          <li class="nav-item"><a class="nav-link" href="../navbar/contactus.html">Contact Us</a></li>
         </ul>
-         <a href="#contact" class="login-button">Get a Quote</a>
+         <a href="../navbar/contactus.html" class="login-button">Get a Quote</a>
       </div>
     </div>
     <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -101,8 +101,8 @@
       <div class="container">
         <div class="row gy-5 gx-lg-5 cec-footer-main">
           <div class="col-12 col-lg-4">
-            <a class="cec-footer-brand" href="#home" aria-label="CEC homepage">
-              <img src="./images/CEC LOGO.png" alt="Century Engineering Contractors">
+            <a class="cec-footer-brand" href="../index.html" aria-label="CEC homepage">
+              <img src="../images/CEC LOGO.png" alt="Century Engineering Contractors">
             </a>
             <p class="cec-footer-about">Engineering Rwanda's future through dependable civil, electrical and electromechanical solutions built to last.</p>
             <div class="cec-footer-social" aria-label="Social media links">
@@ -114,25 +114,11 @@
           </div>
 
           <div class="col-6 col-md-4 col-lg-2">
-            <h2>Quick Links</h2>
-            <ul class="cec-footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+            <h2>Quick Links</h2><ul class="cec-footer-links"><li><a href="../index.html">Home</a></li><li><a href="../navbar/aboutus.html">About Us</a></li><li><a href="../services/allservices.html">Services</a></li><li><a href="../allprojects/allprojects.html">Projects</a></li><li><a href="../navbar/careers.html">Careers</a></li><li><a href="../navbar/contactus.html">Contact Us</a></li></ul>
           </div>
 
           <div class="col-6 col-md-4 col-lg-3">
-            <h2>Our Services</h2>
-            <ul class="cec-footer-links">
-              <li><a href="services.html">Power Infrastructure</a></li>
-              <li><a href="services.html">Building Construction</a></li>
-              <li><a href="services.html">Civil Engineering</a></li>
-              <li><a href="services.html">Water &amp; Sanitation</a></li>
-              <li><a href="services.html">Electromechanical Works</a></li>
-            </ul>
+            <h2>Our Services</h2><ul class="cec-footer-links"><li><a href="../servicesdetails/powertransmission.html">Power Transmission &amp; Distribution</a></li><li><a href="../servicesdetails/building.html">Building &amp; Infrastructure Development</a></li><li><a href="../servicesdetails/civil&amp;engineering.html">Civil &amp; Structural Engineering</a></li><li><a href="../servicesdetails/MPEP.html">Electromechanical / MEP Engineering</a></li><li><a href="../servicesdetails/marine.html">Marine &amp; Port Construction</a></li><li><a href="../servicesdetails/water.html">Water Supply &amp; Sanitation</a></li></ul>
           </div>
 
           <div class="col-12 col-md-4 col-lg-3">
@@ -148,7 +134,7 @@
 
         <div class="cec-footer-bottom">
           <p>© 2026 Century Engineering Contractors Ltd. All rights reserved.</p>
-          <a href="#home">Back to top <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+          <a href="#top">Back to top <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
         </div>
       </div>
     </footer>
