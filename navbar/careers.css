@@ -1,22 +1,206 @@
-:root { --career-navy:#061f49; --career-gold:#e3a018; --career-text:#152743; --career-muted:#58667a; }
-body { color:var(--career-text); background:#fff; font-family:"Inter",sans-serif; }
-.careers-hero { position:relative; min-height:385px; overflow:hidden; }
-.careers-hero > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 48%; }
-.careers-overlay { position:absolute; inset:0; background:rgba(3,25,59,.62); }
-.careers-overlay::after { position:absolute; inset:0 38% 0 0; background:rgba(3,25,59,.78); content:""; }
-.careers-hero-content { position:relative; z-index:1; display:flex; min-height:385px; align-items:center; }
-.careers-copy { width:min(520px,48%); color:#fff; }
-.careers-copy h1 { margin:0; color:var(--career-gold); font-family:"Inter",sans-serif; font-size:34px; font-weight:900; letter-spacing:.02em; }
-.careers-rule { display:block; width:52px; height:3px; margin:11px 0 13px; background:var(--career-gold); }
-.careers-copy h2 { margin:0 0 13px; font-family:"Manrope",sans-serif; font-size:22px; font-weight:800; }
-.careers-copy p { max-width:490px; margin:0 0 7px; font-size:16px; line-height:1.65; }
-.careers-site-button { display:inline-flex; min-height:52px; align-items:center; justify-content:center; margin-top:24px; padding:0 30px; color:#fff; background:var(--career-gold); border:1px solid var(--career-gold); border-radius:3px; font-size:15px; font-weight:800; letter-spacing:.035em; text-decoration:none; transition:background .2s ease,border-color .2s ease; }
-.careers-site-button:hover { color:#fff; background:#bc800d; border-color:#bc800d; }
-.careers-purpose { padding:54px 20px 62px; text-align:center; }
-.careers-purpose .container { max-width:760px; }
-.careers-purpose span { color:var(--career-gold); font-size:16px; font-weight:800; letter-spacing:.08em; }
-.careers-purpose h2 { margin:10px 0 0; color:var(--career-navy); font-family:"Manrope",sans-serif; font-size:28px; font-weight:800; }
-.careers-purpose i { display:block; width:42px; height:3px; margin:14px auto 18px; background:var(--career-gold); }
-.careers-purpose p { margin:0; color:var(--career-muted); font-size:17px; line-height:1.75; }
-@media (max-width:991.98px) { .careers-overlay::after { right:20%; }.careers-copy { width:min(590px,70%); } }
-@media (max-width:767.98px) { .careers-hero,.careers-hero-content { min-height:440px; }.careers-overlay,.careers-overlay::after { background:rgba(3,25,59,.76); }.careers-overlay::after { display:none; }.careers-copy { width:100%; }.careers-copy h1 { font-size:34px; }.careers-copy h2 { font-size:20px; }.careers-copy p { font-size:13px; }.careers-site-button { width:100%; min-height:50px; padding:0 18px; font-size:14px; }.careers-purpose { padding:42px 20px 50px; }.careers-purpose h2 { font-size:26px; }.careers-purpose p { font-size:13px; } }
+:root {
+    --career-navy: #061f49;
+    --career-gold: #e3a018;
+    --career-text: #152743;
+    --career-muted: #58667a;
+}
+
+body {
+    color: var(--career-text);
+    background: #fff;
+    font-family: "Inter", sans-serif;
+}
+
+.careers-hero {
+    position: relative;
+    min-height: 290px;
+    overflow: hidden;
+}
+
+.careers-hero>img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 48%;
+}
+
+.careers-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 25, 59, .7);
+}
+
+.careers-overlay::after {
+    display: none;
+}
+
+.careers-hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 270px;
+    align-items: center;
+}
+
+.careers-copy {
+    width: min(520px, 48%);
+    color: #fff;
+}
+
+.careers-copy h1 {
+    margin: 0;
+    color: var(--career-gold);
+    font-family: "Inter", sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: .02em;
+}
+
+.careers-rule {
+    display: block;
+    width: 52px;
+    height: 3px;
+    margin: 11px 0 13px;
+    background: var(--career-gold);
+}
+
+.careers-copy h2 {
+    margin: 0 0 13px;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.careers-copy p {
+    max-width: 490px;
+    margin: 0 0 7px;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.careers-site-button {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    padding: 0 30px;
+    color: #fff;
+    background: var(--career-gold);
+    border: 1px solid var(--career-gold);
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: .035em;
+    text-decoration: none;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.careers-site-button:hover {
+    color: #fff;
+    background: #bc800d;
+    border-color: #bc800d;
+}
+
+.careers-purpose {
+    padding: 54px 20px 62px;
+    text-align: center;
+}
+
+.careers-purpose .container {
+    max-width: 760px;
+}
+
+.careers-purpose span {
+    color: var(--career-gold);
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.careers-purpose h2 {
+    margin: 10px 0 0;
+    color: var(--career-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.careers-purpose i {
+    display: block;
+    width: 42px;
+    height: 3px;
+    margin: 14px auto 18px;
+    background: var(--career-gold);
+}
+
+.careers-purpose p {
+    margin: 0;
+    color: var(--career-muted);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+@media (max-width:991.98px) {
+    .careers-overlay::after {
+        right: 20%;
+    }
+
+    .careers-copy {
+        width: min(590px, 70%);
+    }
+}
+
+@media (max-width:767.98px) {
+
+    .careers-hero,
+    .careers-hero-content {
+        min-height: 390px;
+    }
+
+    .careers-overlay,
+    .careers-overlay::after {
+        background: rgba(3, 25, 59, .76);
+    }
+
+    .careers-overlay::after {
+        display: none;
+    }
+
+    .careers-copy {
+        width: 100%;
+    }
+
+    .careers-copy h1 {
+        font-size: 34px;
+    }
+
+    .careers-copy h2 {
+        font-size: 20px;
+    }
+
+    .careers-copy p {
+        font-size: 13px;
+    }
+
+    .careers-site-button {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 18px;
+        font-size: 14px;
+    }
+
+    .careers-purpose {
+        padding: 42px 20px 50px;
+    }
+
+    .careers-purpose h2 {
+        font-size: 26px;
+    }
+
+    .careers-purpose p {
+        font-size: 13px;
+    }
+}
