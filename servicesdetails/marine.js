@@ -1,4 +1,55 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // One circular service sequence shared by every service detail page.
+  const services = [
+    { file: 'civil&engineering.html', name: 'Civil & Structural Engineering', image: '../images/cec-about-reference.png' },
+    { file: 'building.html', name: 'Building & Infrastructure Development', image: 'https://static.wixstatic.com/media/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg/v1/fill/w_1200,h_650,al_c,q_90,enc_avif,quality_auto/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg' },
+    { file: 'powertransmission.html', name: 'Power Transmission & Distribution', image: '../images/B58A4353.jpg' },
+    { file: 'MPEP.html', name: 'Electromechanical / MEP Engineering', image: '../images/B58A4353.jpg' },
+    { file: 'water.html', name: 'Water Supply & Sanitation', image: '../images/keya-hpp.jpg' },
+    { file: 'marine.html', name: 'Marine & Civil Works', image: '../images/rubavu port.jpg' }
+  ];
+  const currentService = services.findIndex((service) => service.file === decodeURIComponent(window.location.pathname.split('/').pop()));
+  const footer = document.querySelector('.cec-footer');
+
+  if (currentService !== -1 && footer) {
+    const navigation = document.createElement('nav');
+    navigation.className = 'service-navigation';
+    navigation.setAttribute('aria-label', 'Previous and next services');
+    const container = document.createElement('div');
+    container.className = 'container service-navigation-inner';
+
+    [-1, 1].forEach((offset) => {
+      const service = services[(currentService + offset + services.length) % services.length];
+      const direction = offset === -1 ? 'previous' : 'next';
+      const link = document.createElement('a');
+      link.className = `service-navigation-link service-navigation-${direction}`;
+      link.href = `./${service.file}`;
+      const thumbnail = document.createElement('span');
+      thumbnail.className = 'service-navigation-thumbnail';
+      const image = document.createElement('img');
+      image.src = service.image;
+      image.alt = '';
+      image.width = 90;
+      image.height = 90;
+      image.loading = 'lazy';
+      thumbnail.append(image);
+      const copy = document.createElement('span');
+      copy.className = 'service-navigation-copy';
+      const label = document.createElement('span');
+      label.className = 'service-navigation-label';
+      label.textContent = direction.toUpperCase();
+      const title = document.createElement('span');
+      title.className = 'service-navigation-title';
+      title.textContent = service.name;
+      copy.append(label, title);
+      link.append(...(offset === -1 ? [thumbnail, copy] : [copy, thumbnail]));
+      container.append(link);
+    });
+
+    navigation.append(container);
+    footer.before(navigation);
+  }
+
   document.querySelectorAll('[data-slider]').forEach((slider, sliderIndex) => {
     const slides = [...slider.querySelectorAll('.project-slides img')];
     let current = 0;
