@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Power Transmission &amp; Distribution | Century Engineering Contractors{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
+{% endblock %}
+{% block extra_css %}<link href="{% static 'css/marine.css' %}" rel="stylesheet">{% endblock %}
+{% block body_attrs %} data-service-file="powertransmission.html"{% endblock %}
+{% block content %}
+
+
+  <main>
+    <section class="marine-service" aria-labelledby="power-service-title">
+      <div class="container marine-service-container"><div class="row align-items-stretch g-4 g-xl-5">
+        <div class="col-lg-7 marine-copy">
+          <nav class="service-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="{% url 'core:home' %}">Home</a></li><li><a href="{% url 'services:list' %}">Services</a></li><li aria-current="page">Power Transmission &amp; Distribution</li></ol></nav>
+          <header class="marine-intro">
+            <h1 id="power-service-title" class="reveal-item">POWER TRANSMISSION &amp; <em>DISTRIBUTION</em></h1>
+            <div class="marine-description reveal-item"><p>CEC delivers end-to-end solutions for high-voltage transmission, substation and distribution networks.</p><p>We connect communities, power industries and drive progress with safe, reliable and efficient electrical infrastructure.</p></div>
+          </header>
+
+          <section class="capabilities" aria-labelledby="capabilities-title">
+            <h2 id="capabilities-title">OUR CAPABILITIES <span aria-hidden="true"></span></h2>
+            <div class="row g-0 capability-grid">
+              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-broadcast-pin"></i></div><div><h3>Transmission Line Projects</h3><p>Construction of 220kV and 110kV transmission lines connecting key regions and substations.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-building-gear"></i></div><div><h3>Substation &amp; Transformer Works</h3><p>Design, construction, installation and maintenance of substations and power transformers.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-diagram-3"></i></div><div><h3>Distribution Networks</h3><p>Construction of MV/LV distribution networks, feeder interconnections and rural electrification.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></div><div><h3>Testing &amp; Commissioning</h3><p>Testing, protection and commissioning of transmission lines, substations and distribution systems.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-shield-fill-check"></i></div><div><h3>Protection &amp; Control Systems</h3><p>Installation of protection, SCADA and control systems for reliable power operations.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-wrench-adjustable"></i></div><div><h3>Operation &amp; Maintenance Support</h3><p>Routine maintenance, inspections and support services to ensure uninterrupted power supply.</p></div></article></div>
+            </div>
+          </section>
+
+          <aside class="marine-closing reveal-item"><div class="closing-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></div><div><h2>POWERING COMMUNITIES.<strong>BUILDING A STRONGER FUTURE.</strong></h2><p>We deliver electrical infrastructure that ensures reliability, sustainability and long-term value for our clients.</p></div></aside>
+        </div>
+
+        <div class="col-lg-5"><div class="project-gallery" aria-label="Power transmission and distribution projects">
+          <figure class="project-photo project-photo-keya project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/cec-about-reference.png' %}" alt="High-voltage transmission infrastructure" loading="eager"></div><figcaption>220kV &amp; 110kV Transmission Lines</figcaption></figure>
+          <figure class="project-photo project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/B58A4353.jpg' %}" alt="Power line installation works" loading="lazy"></div><figcaption>Substation &amp; Transformer Works</figcaption></figure>
+          <figure class="project-photo project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/Capture.PNG' %}" alt="Regional electrical infrastructure" loading="lazy"></div><figcaption>Distribution Networks</figcaption></figure>
+        </div></div>
+      </div></div>
+    </section>
+
+  </main>
+  
+  
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/marine.js' %}"></script>
+{% endblock %}

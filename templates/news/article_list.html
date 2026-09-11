@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}News &amp; Updates | Century Engineering Contractors{% endblock %}
+{% block meta_description %}<meta name="description" content="Read the latest project updates, engineering milestones and company news from Century Engineering Contractors.">{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+{% endblock %}
+{% block extra_css %}<link href="{% static 'css/news.css' %}" rel="stylesheet">{% endblock %}
+{% block body_attrs %} id="top"{% endblock %}
+{% block content %}
+
+  <main>
+    <header class="news-hero"><img src="{% static 'images/cec-about-reference.png' %}" alt="CEC engineer overseeing electrical infrastructure works"><div class="news-hero-overlay" aria-hidden="true"></div><div class="container news-hero-content"><h1>News &amp; Updates</h1><span class="news-gold-rule" aria-hidden="true"></span><p>Stay informed about CEC's latest projects, milestones,<br>company developments and activities.</p></div></header>
+    <section class="news-content" aria-label="CEC news and updates"><div class="container">
+      <div class="news-toolbar"><div class="news-categories" role="tablist" aria-label="News categories"><button class="news-filter active" type="button" role="tab" aria-selected="true" data-filter="all">All News</button><button class="news-filter" type="button" role="tab" aria-selected="false" data-filter="events">Events &amp; Milestones</button><button class="news-filter" type="button" role="tab" aria-selected="false" data-filter="projects">Project Updates</button><button class="news-filter" type="button" role="tab" aria-selected="false" data-filter="company">Company News</button><button class="news-filter" type="button" role="tab" aria-selected="false" data-filter="gallery">Gallery</button></div><label class="news-search"><i class="bi bi-search" aria-hidden="true"></i><span class="visually-hidden">Search news</span><input id="news-search" type="search" placeholder="Search news..." autocomplete="off"></label></div>
+      <div id="news-results" class="news-grid" aria-live="polite"></div><div id="news-empty" class="news-empty" hidden><i class="bi bi-newspaper" aria-hidden="true"></i><h2>No news found</h2><p>Try another search or choose a different category.</p></div><div id="news-gallery" class="news-gallery" hidden aria-live="polite"></div>
+    </div></section>
+  </main>
+  <div class="news-lightbox" id="news-lightbox" role="dialog" aria-modal="true" aria-label="Project image viewer" hidden><button class="lightbox-close" type="button" aria-label="Close image viewer"><i class="bi bi-x-lg"></i></button><button class="lightbox-control lightbox-prev" type="button" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button><figure><img src="" alt=""><figcaption><strong></strong><span></span></figcaption></figure><button class="lightbox-control lightbox-next" type="button" aria-label="Next image"><i class="bi bi-chevron-right"></i></button></div>
+
+  
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/news.js' %}"></script>
+{% endblock %}

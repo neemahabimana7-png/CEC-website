@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Careers | CEC{% endblock %}
+{% block meta_description %}<meta name="description" content="Build your engineering and construction career with Century Engineering Contractors.">{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+{% endblock %}
+{% block extra_css %}<link href="{% static 'css/careers.css' %}" rel="stylesheet">{% endblock %}
+{% block body_attrs %} id="top"{% endblock %}
+{% block content %}
+
+
+  <main>
+    <section class="careers-hero" aria-labelledby="careers-title"><img src="{% static 'images/cec-about-reference.png' %}" alt="CEC engineer working on electrical infrastructure"><div class="careers-overlay" aria-hidden="true"></div><div class="container careers-hero-content"><div class="careers-copy"><h1 id="careers-title">CAREERS</h1><span class="careers-rule" aria-hidden="true"></span><h2>Build your future with us.</h2><!---<p>At CEC, we are always looking for talented, passionate and driven individuals who want to make a difference.</p><p>Join our team and help us build quality infrastructure that shapes communities and lives.</p>--></div></div></section>
+
+    <section class="careers-purpose" aria-labelledby="purpose-title"><div class="container"><span>WHY WORK WITH CEC?</span><h2 id="purpose-title">More than a job. A purpose.</h2><i aria-hidden="true"></i><p>We are a team of engineers, builders, planners and innovators working together to deliver exceptional results. When you join CEC, you become part of a culture that values integrity, safety, teamwork and excellence.</p><a class="careers-site-button" href="mailto:cec@epcafrica.com?subject=CEC%20Career%20Opportunities">VISIT OUR CAREER SITE</a></div></section>
+  </main>
+
+
+  
+
+{% endblock %}

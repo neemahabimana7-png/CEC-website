@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100" role="img" aria-labelledby="title description">
+  <title id="title">Team photo placeholder</title>
+  <desc id="description">Replace this placeholder with the team member's portrait.</desc>
+  <rect width="900" height="1100" fill="#eef0f2"/>
+  <circle cx="450" cy="405" r="142" fill="#d6dbe0"/>
+  <path d="M178 978c20-225 124-355 272-355s252 130 272 355" fill="#d6dbe0"/>
+  <text x="450" y="1030" fill="#0b1f3a" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" letter-spacing="3">ADD TEAM PHOTO</text>
+</svg>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}{% include "partials/navbar_fluid.html" %}{% endblock %}
+{% block title %}Clients &amp; Institutions | CEC{% endblock %}
+{% block meta_description %}<meta name="description" content="Clients and institutions that have trusted Century Engineering Contractors.">{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+{% endblock %}
+{% block extra_css %}<link href="{% static 'css/clients.css' %}" rel="stylesheet">{% endblock %}
+{% block body_attrs %} id="top"{% endblock %}
+{% block content %}
+
+
+  <main>
+    <section class="clients-section" aria-labelledby="clients-title"><div class="container">
+      <header class="clients-heading"><span class="clients-eyebrow">TRUSTED BY</span><h1 id="clients-title">Our Clients &amp; Institutions</h1><i class="clients-rule" aria-hidden="true"></i></header>
+      <!-- Put your single combined partners picture at: images/clients-partners.png -->
+      <figure class="clients-picture">
+        <div class="clients-picture-placeholder"><i class="bi bi-image" aria-hidden="true"></i><strong>Clients &amp; Partners Image</strong><span>Put your picture in<br><code>images/clients-partners.png</code></span></div>
+        <img src="https://static.wixstatic.com/media/6a77e1_cf724a24b309475bbf98315480c56078~mv2.jpg/v1/fill/w_1901,h_355,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/6a77e1_cf724a24b309475bbf98315480c56078~mv2.jpg" alt="CEC clients and partner institutions" onerror="this.style.display='none'">
+      </figure>
+    </div></section>
+  </main>
+
+
+  
+
+{% endblock %}

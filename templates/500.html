@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Server Error | CEC{% endblock %}
+{% block meta_description %}<meta name="description" content="An internal server error has occurred.">{% endblock %}
+{% block content %}
+<main>
+  <section class="error-page" style="min-height:60vh;display:flex;align-items:center;justify-content:center;">
+    <div class="container text-center">
+      <h1 style="font-size:6rem;font-weight:700;color:var(--cec-navy);">500</h1>
+      <p style="font-size:1.25rem;color:#6c757d;margin-bottom:2rem;">Something went wrong on our end. Please try again later.</p>
+      <a href="{% url 'core:home' %}" class="btn btn-primary">Back to Home</a>
+    </div>
+  </section>
+</main>
+{% endblock %}
