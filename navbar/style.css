@@ -400,6 +400,7 @@ video {
     filter: invert(1);
 }
 .hero-section {
+    background-color: #102b47;
     position: relative;
     max-height: 80vh;
     display: flex;
@@ -1141,7 +1142,39 @@ video {
     transition: transform .3s ease;
 }
 
+.cec-service-image-power {
+    position: relative;
+    background: #f3f0e8;
+}
+
+.cec-service-image-power img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% center;
+}
+
+@media (min-width: 576px) {
+    .cec-service-preview .cec-service-image.cec-service-image-power {
+        height: auto;
+        align-self: stretch;
+    }
+}
+
+.cec-service-image-power img[src$="cec-about-reference.png"] {
+    object-position: left center;
+}
+
+.cec-service-image img[src$="buildinghome.png"] {
+    object-position: right center;
+    transform-origin: right center;
+}
+
 .cec-service-preview:hover .cec-service-image img { transform: scale(1.03); }
+
+.cec-service-preview:hover .cec-service-image-power img { transform: none; }
 
 .cec-service-content {
     display: flex;

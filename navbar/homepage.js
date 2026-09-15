@@ -31,6 +31,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.12 });
@@ -216,22 +217,46 @@ if ('IntersectionObserver' in window && groupRevealItems.length) {
   groupRevealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-// Keep the large decorative video out of the critical loading path.
+// Fetch the decorative video only after the page is ready and the hero is visible.
 const heroVideo = document.querySelector('.hero-video');
-const canLoadHeroVideo = heroVideo && !navigator.connection?.saveData && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const connection = navigator.connection;
+const canLoadHeroVideo = heroVideo && !connection?.saveData
+  && !['slow-2g', '2g', '3g'].includes(connection?.effectiveType)
+  && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (canLoadHeroVideo) {
-  const loadHeroVideo = () => {
+  let heroVisible = false;
+  let pageReady = false;
+  const updateHeroPlayback = () => {
+    if (!pageReady || !heroVisible || document.hidden) {
+      heroVideo.pause();
+      return;
+    }
     const source = heroVideo.querySelector('source[data-src]');
-    if (!source) return;
-    source.src = source.dataset.src;
-    source.removeAttribute('data-src');
-    heroVideo.load();
+    if (source) {
+      source.src = source.dataset.src;
+      source.removeAttribute('data-src');
+      heroVideo.load();
+    }
     heroVideo.play().catch(() => {});
   };
-
-  window.addEventListener('load', () => {
-    if ('requestIdleCallback' in window) requestIdleCallback(loadHeroVideo, { timeout: 1500 });
-    else setTimeout(loadHeroVideo, 400);
-  }, { once: true });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      heroVisible = entry.isIntersecting;
+      updateHeroPlayback();
+    }).observe(heroVideo);
+  } else {
+    heroVisible = true;
+  }
+  document.addEventListener('visibilitychange', updateHeroPlayback);
+  const scheduleVideo = () => {
+    const ready = () => {
+      pageReady = true;
+      updateHeroPlayback();
+    };
+    if ('requestIdleCallback' in window) requestIdleCallback(ready, { timeout: 1500 });
+    else setTimeout(ready, 400);
+  };
+  if (document.readyState === 'complete') scheduleVideo();
+  else window.addEventListener('load', scheduleVideo, { once: true });
 }
