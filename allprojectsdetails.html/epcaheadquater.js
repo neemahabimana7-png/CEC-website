@@ -16,25 +16,41 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     observer.observe(item);
   });
 }
-const galleryLightbox = document.querySelector('.gallery-lightbox');
+let galleryLightbox = document.querySelector('.gallery-lightbox');
+// A modal dialog uses the browser's top layer, independent of page animations.
+if (galleryLightbox) {
+  const dialog = document.createElement('dialog');
+  dialog.className = galleryLightbox.className;
+  dialog.setAttribute('aria-label', 'Project image preview');
+  dialog.hidden = true;
+  dialog.append(...galleryLightbox.childNodes);
+  galleryLightbox.replaceWith(dialog);
+  document.body.appendChild(dialog);
+  galleryLightbox = dialog;
+}
 const galleryLightboxImage = galleryLightbox?.querySelector('img');
 const galleryLightboxClose = galleryLightbox?.querySelector('.gallery-lightbox-close');
 const galleryImages = document.querySelectorAll('.gallery-track img');
+let galleryTrigger = null;
 
 function openGalleryImage(image) {
   if (!galleryLightbox || !galleryLightboxImage) return;
+  galleryTrigger = image;
   galleryLightboxImage.src = image.currentSrc || image.src;
   galleryLightboxImage.alt = image.alt || 'EPCA Group Headquarters project image';
   galleryLightbox.hidden = false;
   document.body.classList.add('lightbox-open');
-  galleryLightboxClose?.focus();
+  galleryLightbox.showModal();
+  galleryLightboxClose?.focus({ preventScroll: true });
 }
 
 function closeGalleryImage() {
   if (!galleryLightbox || !galleryLightboxImage) return;
+  galleryLightbox.close();
   galleryLightbox.hidden = true;
   galleryLightboxImage.src = '';
   document.body.classList.remove('lightbox-open');
+  galleryTrigger?.focus({ preventScroll: true });
 }
 
 galleryImages.forEach((image) => {
@@ -48,6 +64,10 @@ galleryImages.forEach((image) => {
 });
 
 galleryLightboxClose?.addEventListener('click', closeGalleryImage);
+galleryLightbox?.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  closeGalleryImage();
+});
 galleryLightbox?.addEventListener('click', (event) => {
   if (event.target === galleryLightbox) closeGalleryImage();
 });

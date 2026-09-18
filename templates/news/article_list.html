@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
 {% endblock %}
-{% block extra_css %}<link href="{% static 'css/news.css' %}" rel="stylesheet">{% endblock %}
+{% block extra_css %}<link href="{% static 'css/news.css' %}?v=rusizi-gallery-1" rel="stylesheet">{% endblock %}
 {% block body_attrs %} id="top"{% endblock %}
 {% block content %}
 
@@ -24,5 +24,5 @@
 
 {% endblock %}
 {% block scripts %}
-<script src="{% static 'js/news.js' %}"></script>
+<script src="{% static 'js/news.js' %}?v=rusizi-gallery-1"></script>
 {% endblock %}

@@ -63,9 +63,10 @@ body { margin:0; overflow-x:hidden; background:#fff; color:var(--detail-ink); fo
 .gallery-track img { width:100%; height:100%; object-fit:cover; cursor:zoom-in; }
 .gallery-viewport:hover .gallery-track { animation-play-state:paused; }
 @keyframes gallery-scroll { to { transform:translate3d(calc(-50% - 5px),0,0); } }
-.gallery-lightbox { position:fixed; inset:0; z-index:1100; display:flex; align-items:center; justify-content:center; padding:32px; background:rgba(4,20,36,.94); }
+.gallery-lightbox { position:fixed; inset:0; z-index:1100; display:flex; align-items:center; justify-content:center; width:100%; height:100vh; height:100dvh; max-width:none; max-height:none; margin:0; border:0; padding:72px 24px; overflow:hidden; background:rgba(4,20,36,.94); }
+.gallery-lightbox::backdrop { background:transparent; }
 .gallery-lightbox[hidden] { display:none; }
-.gallery-lightbox img { display:block; max-width:min(1100px,94vw); max-height:88vh; object-fit:contain; box-shadow:0 12px 45px rgba(0,0,0,.35); }
+.gallery-lightbox img { display:block; width:auto; height:auto; max-width:min(1100px,100%); max-height:calc(100vh - 144px); max-height:calc(100dvh - 144px); object-fit:contain; box-shadow:0 12px 45px rgba(0,0,0,.35); }
 .gallery-lightbox-close { position:absolute; top:22px; right:24px; width:46px; height:46px; border:1px solid rgba(255,255,255,.55); border-radius:50%; background:rgba(8,39,70,.65); color:#fff; font-size:22px; cursor:pointer; }
 .gallery-lightbox-close:hover,.gallery-lightbox-close:focus-visible { border-color:var(--detail-gold); color:var(--detail-gold); }
 body.lightbox-open { overflow:hidden; }
