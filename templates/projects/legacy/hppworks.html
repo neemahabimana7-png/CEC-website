@@ -26,11 +26,7 @@
       <article class="scope-item reveal"><strong>05</strong><i class="bi bi-sliders" aria-hidden="true"></i><h2>CONTROL EQUIPMENT</h2><p>Replacement of defaulted control equipment, including drain valves, water-level sensors and charge-voltage regulators for the three HPPs.</p></article>
       <article class="scope-item reveal"><strong>06</strong><i class="bi bi-bricks" aria-hidden="true"></i><h2>CIVIL &amp; PROTECTION WORKS</h2><p>Construction of retaining walls and rehabilitation of critical water-channel sections, canals and forebay tanks, together with associated protection works.</p></article>
     </div></section>
-    <section class="project-gallery" id="gallery"><span class="section-kicker reveal">PROJECT GALLERY</span><i class="section-rule reveal" aria-hidden="true"></i><div class="gallery-viewport reveal"><div class="gallery-track">
-      <figure><img src="{% static 'images/nkora-mhpp.jpg' %}" alt="Nkora MHPP exterior view" tabindex="0"></figure><figure><img src="{% static 'images/keya-hpp.jpg' %}" alt="Hydropower intake and waterway structure" tabindex="0"></figure><figure><img src="{% static 'images/cyimbili-mhpp.jpg' %}" alt="Cyimbili MHPP exterior view" tabindex="0"></figure>
-      <figure aria-hidden="true"><img src="{% static 'images/nkora-mhpp.jpg' %}" alt=""></figure><figure aria-hidden="true"><img src="{% static 'images/keya-hpp.jpg' %}" alt=""></figure><figure aria-hidden="true"><img src="{% static 'images/cyimbili-mhpp.jpg' %}" alt=""></figure>
-    </div></div></section>
-    <div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" hidden><button class="gallery-lightbox-close" type="button" aria-label="Close image preview"><i class="bi bi-x-lg"></i></button><img src="" alt=""></div>
+    {% include "projects/partials/project_gallery.html" %}
   </main>
   
 

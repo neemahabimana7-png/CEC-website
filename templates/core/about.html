@@ -157,56 +157,20 @@
       </header>
 
       <div class="row g-0 justify-content-center team-row">
-        <div class="col-12 col-sm-6 col-lg-3 team-reveal" style="--team-delay: 0ms;">
+        {% for member in team_members %}
+        <div class="col-12 col-sm-6 col-lg-3 team-reveal" style="--team-delay: {{ forloop.counter0 }}00ms;">
           <article class="team-member">
             <div class="team-photo">
-              <img src="https://www.epcafrica.com/assets/team/bord/ferdyturasenga.png"
-                alt="Portrait placeholder for Jean Claude Niyonzima">
+              <img src="{{ member.image_url }}" alt="{{ member.name }}">
               <span aria-hidden="true"></span>
             </div>
-            <h3>Ferdy TURASENGA</h3>
-            <p>Executive Chairman</p>
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
             <span class="team-member-rule" aria-hidden="true"></span>
           </article>
         </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 team-reveal" style="--team-delay: 100ms;">
-          <article class="team-member">
-            <div class="team-photo">
-              <img src="https://www.epcafrica.com/assets/team/members/CarineKAMANZI.jpeg"
-                alt="Portrait placeholder for Eng. Emmanuel Rukundo">
-              <span aria-hidden="true"></span>
-            </div>
-            <h3>Carine KAMANZI</h3>
-            <p>Managing Director</p>
-            <span class="team-member-rule" aria-hidden="true"></span>
-          </article>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 team-reveal" style="--team-delay: 200ms;">
-          <article class="team-member">
-            <div class="team-photo">
-              <img src="{% static 'images/MUGWANEZA_ERIC-_DAF.jpeg' %}" alt="Portrait placeholder for Carine Umutoni">
-              <span aria-hidden="true"></span>
-            </div>
-            <h3>Eric MUGWANEZA</h3>
-            <p> Director of Administration and Finance</p>
-            <span class="team-member-rule" aria-hidden="true"></span>
-          </article>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-3 team-reveal" style="--team-delay: 300ms;">
-          <article class="team-member">
-            <div class="team-photo">
-              <img src="{% static 'images/team-photo-placeholder.svg' %}"
-                alt="Portrait placeholder for Patrick Habimana">
-              <span aria-hidden="true"></span>
-            </div>
-            <h3></h3>
-            <p></p>
-            <span class="team-member-rule" aria-hidden="true"></span>
-          </article>
-        </div>
+        {% empty %}
+        {% endfor %}
       </div>
     </div>
   </section>

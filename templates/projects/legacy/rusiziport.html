@@ -91,32 +91,7 @@
       </article>
     </div>
   </section>
-  <section class="project-gallery" id="gallery"><span class="section-kicker reveal">PROJECT GALLERY</span><i
-      class="section-rule reveal" aria-hidden="true"></i>
-    <div class="gallery-viewport reveal">
-      <div class="gallery-track">
-        <figure><img src="{% static 'images/RUSIZI1.jpg' %}" alt="Aerial view of Rusizi Port development in Rwanda"
-            tabindex="0"></figure>
-        <figure><img src="{% static 'images/RUSIZI2.png' %}" alt="Aerial view of Rusizi Port development in Rwanda"
-            tabindex="0"></figure>
-        <figure aria-hidden="true"><img src="{% static 'images/RUSIZI4.png' %}" alt=""></figure>
-        <figure><img src="{% static 'images/RUSIZI3.jpg' %}" alt="Aerial view of Rusizi Port development in Rwanda"
-            tabindex="0"></figure>
-                   <figure aria-hidden="true"><img src="{% static 'images/RUSIZI8.jpg' %}" alt=""></figure>
-         <figure aria-hidden="true"><img src="{% static 'images/Rusizi port.jpg' %}" alt=""></figure>
-         <figure aria-hidden="true"><img src="{% static 'images/RUSIZI6.jpg' %}" alt=""></figure>
-         <figure aria-hidden="true"><img src="{% static 'images/RUSIZI7.jpg' %}" alt=""></figure>
-         <figure aria-hidden="true"><img src="{% static 'images/RUSIZI9.jpg' %}" alt=""></figure>
-
-        
-
-
-      </div>
-    </div>
-  </section>
-  <div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" hidden><button
-      class="gallery-lightbox-close" type="button" aria-label="Close image preview"><i
-        class="bi bi-x-lg"></i></button><img src="" alt=""></div>
+  {% include "projects/partials/project_gallery.html" %}
 </main>
 
 

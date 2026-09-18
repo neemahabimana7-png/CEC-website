@@ -67,17 +67,8 @@ const newsArticles = [
   }
 ];
 
-const galleryItems = [
-  { image: '../images/B58A4353.jpg', name: 'Shango–Birembo Transmission Line', category: 'Power & Energy' },
-  { image: 'https://static.wixstatic.com/media/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg/v1/fill/w_1200,h_650,al_c,q_90,enc_avif,quality_auto/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg', name: 'EPCA Group Headquarters', category: 'Buildings' },
-  { image: '../images/Capture.PNG', name: 'Rubavu Port', category: 'Marine & Civil Works' },
-  { image: '../images/Rusizi port.jpg', name: 'Rusizi Port', category: 'Marine & Civil Works' },
-  { image: '../images/luxury-apartments-blocks.jpg', name: 'Luxury Apartments – Kagarama', category: 'Buildings' },
-  { image: '../images/akagera-game-lodge.jpg', name: 'Akagera Game Lodge', category: 'Buildings' },
-  { image: '../images/residential-house-kimihurura.jpg', name: 'Kimihurura Residential House', category: 'Buildings' },
-  { image: '../images/keya-hpp.jpg', name: 'Keya Hydropower Plant', category: 'Power & Energy' },
-  { image: '../images/rubavu3.PNG', name: 'Rubavu Port Infrastructure', category: 'Marine & Civil Works' }
-];
+const galleryData = document.querySelector('#gallery-items-data');
+const galleryItems = galleryData ? JSON.parse(galleryData.textContent) : [];
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, character => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[character]);
 
@@ -126,14 +117,24 @@ function bindGalleryItems() {
 }
 function openLightbox(index) {
   const lightbox = document.querySelector('#news-lightbox'); if (!lightbox) return;
-  previousFocus = document.activeElement; currentGalleryIndex = (index + galleryItems.length) % galleryItems.length;
+  if (!lightbox.open) previousFocus = document.activeElement; currentGalleryIndex = (index + galleryItems.length) % galleryItems.length;
   const item = galleryItems[currentGalleryIndex]; const image = lightbox.querySelector('img');
   image.src = resolveCecImage(item.image); image.alt = item.name; lightbox.querySelector('strong').textContent = item.name; lightbox.querySelector('figcaption span').textContent = item.category;
-  lightbox.hidden = false; document.body.classList.add('lightbox-open'); lightbox.querySelector('.lightbox-close').focus();
+  lightbox.hidden = false; document.body.classList.add('lightbox-open'); if (!lightbox.open) lightbox.showModal(); lightbox.querySelector('.lightbox-close').focus({ preventScroll: true });
 }
-function closeLightbox() { const lightbox = document.querySelector('#news-lightbox'); if (!lightbox) return; lightbox.hidden = true; lightbox.querySelector('img').src = ''; document.body.classList.remove('lightbox-open'); previousFocus?.focus(); }
+function closeLightbox() { const lightbox = document.querySelector('#news-lightbox'); if (!lightbox) return; lightbox.close(); lightbox.hidden = true; lightbox.querySelector('img').src = ''; document.body.classList.remove('lightbox-open'); previousFocus?.focus({ preventScroll: true }); }
 function setupLightbox() {
-  const lightbox = document.querySelector('#news-lightbox'); if (!lightbox) return;
+  let lightbox = document.querySelector('#news-lightbox'); if (!lightbox) return;
+  const dialog = document.createElement('dialog');
+  dialog.id = lightbox.id;
+  dialog.className = lightbox.className;
+  dialog.setAttribute('aria-label', 'Project image viewer');
+  dialog.hidden = true;
+  dialog.append(...lightbox.childNodes);
+  lightbox.replaceWith(dialog);
+  document.body.appendChild(dialog);
+  lightbox = dialog;
+  lightbox.addEventListener('cancel', event => { event.preventDefault(); closeLightbox(); });
   lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.querySelector('.lightbox-prev').addEventListener('click', () => openLightbox(currentGalleryIndex - 1));
   lightbox.querySelector('.lightbox-next').addEventListener('click', () => openLightbox(currentGalleryIndex + 1));

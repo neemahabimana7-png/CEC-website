@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.views.generic import TemplateView
 
 from .legacy import PROJECT_FILES, PROJECT_TEMPLATES
+from .models import ProjectPhoto
 
 _SLUG_BY_FILE = {v: k for k, v in PROJECT_FILES.items()}
 
@@ -27,6 +28,9 @@ class LegacyProjectDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         context["active_nav"] = "projects"
         context["footer_cta"] = "mailto:info@cec.rw"
+        context["project_photos"] = ProjectPhoto.objects.filter(
+            project_slug=self.kwargs["slug"], is_active=True
+        )
         return context
 
 
