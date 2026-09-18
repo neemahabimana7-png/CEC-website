@@ -4,6 +4,8 @@ from .base import *  # noqa: F401,F403
 
 SETTINGS_ENV = "prod"
 
+MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+
 DEBUG = False
 
 if not os.environ.get("SECRET_KEY"):
@@ -28,7 +30,7 @@ SECURE_HSTS_PRELOAD = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CSRF_TRUSTED_ORIGINS = [
     o.strip()
