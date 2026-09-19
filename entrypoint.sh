@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu
 
+mkdir -p "${MEDIA_ROOT:-/data/media}" "${STATIC_ROOT:-/data/staticfiles}"
+
 python manage.py migrate --noinput
 python manage.py collectstatic --noinput
 
