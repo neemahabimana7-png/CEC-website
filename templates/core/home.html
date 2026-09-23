@@ -32,13 +32,25 @@
     <span></span>
   </div>
   <script>
-    // Reveal the copy after two seconds of actual video playback, once only.
+    // Start shortly after playback; reveal letters without shifting the layout.
     (() => {
       const hero = document.getElementById('home');
       const video = hero.querySelector('video.hero-video');
       const copy = hero.querySelector('.hero-content');
+      const heading = hero.querySelector('h1');
       if (!video || navigator.connection?.saveData
           || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const title = heading.textContent;
+      heading.setAttribute('aria-label', title);
+      const letters = Array.from(title, (letter) => {
+        const span = document.createElement('span');
+        span.className = 'hero-letter';
+        span.textContent = letter;
+        span.setAttribute('aria-hidden', 'true');
+        return span;
+      });
+      heading.replaceChildren(...letters);
 
       let revealed = false;
       let fallback;
@@ -49,16 +61,25 @@
         clearTimeout(fallback);
         video.removeEventListener('timeupdate', onProgress);
         video.removeEventListener('error', reveal);
+        const started = performance.now();
+        let visibleCount = 0;
+        const type = (now) => {
+          const count = Math.min(letters.length, Math.floor((now - started) / 35) + 1);
+          while (visibleCount < count) letters[visibleCount++].classList.add('is-visible');
+          if (visibleCount < letters.length) requestAnimationFrame(type);
+          else copy.classList.remove('hero-typing');
+        };
+        requestAnimationFrame(type);
       };
       const onProgress = () => {
-        if (video.currentTime >= 2) reveal();
+        if (video.currentTime >= 0.5) reveal();
       };
 
-      copy.classList.add('hero-copy-pending');
+      copy.classList.add('hero-copy-pending', 'hero-typing');
       video.addEventListener('timeupdate', onProgress);
       video.addEventListener('error', reveal, { once: true });
       // Keep navigation available if autoplay is blocked or loading stalls.
-      fallback = setTimeout(reveal, 8000);
+      fallback = setTimeout(reveal, 3000);
       onProgress();
     })();
   </script>
