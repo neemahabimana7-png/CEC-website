@@ -217,17 +217,24 @@ if ('IntersectionObserver' in window && groupRevealItems.length) {
   groupRevealItems.forEach((item) => item.classList.add('is-visible'));
 }
 
-// Fetch the decorative video only after the page is ready and the hero is visible.
+// Start when the hero is visible; unrelated maps and images must not delay playback.
 const heroVideo = document.querySelector('.hero-video');
 const connection = navigator.connection;
 const canLoadHeroVideo = heroVideo && !connection?.saveData
-  && !['slow-2g', '2g', '3g'].includes(connection?.effectiveType)
   && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (canLoadHeroVideo) {
   let heroVisible = false;
   let pageReady = false;
   const updateHeroPlayback = () => {
+    if (heroVideo.tagName === 'IFRAME') {
+      if (!pageReady || !heroVisible || document.hidden) {
+        if (heroVideo.hasAttribute('src')) heroVideo.removeAttribute('src');
+      } else if (!heroVideo.hasAttribute('src')) {
+        heroVideo.src = heroVideo.dataset.src;
+      }
+      return;
+    }
     if (!pageReady || !heroVisible || document.hidden) {
       heroVideo.pause();
       return;
@@ -244,7 +251,7 @@ if (canLoadHeroVideo) {
     new IntersectionObserver(([entry]) => {
       heroVisible = entry.isIntersecting;
       updateHeroPlayback();
-    }).observe(heroVideo);
+    }).observe(heroVideo.closest('.hero-section') || heroVideo);
   } else {
     heroVisible = true;
   }
@@ -257,6 +264,5 @@ if (canLoadHeroVideo) {
     if ('requestIdleCallback' in window) requestIdleCallback(ready, { timeout: 1500 });
     else setTimeout(ready, 400);
   };
-  if (document.readyState === 'complete') scheduleVideo();
-  else window.addEventListener('load', scheduleVideo, { once: true });
+  scheduleVideo();
 }

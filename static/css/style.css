@@ -424,6 +424,20 @@ video {
     object-position: center;
     z-index: 0;
 }
+.hero-section:has(.hero-video-youtube) {
+    height: 80vh;
+    container-type: size;
+}
+.hero-video-youtube {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    width: max(100cqw, 177.78cqh);
+    height: max(100cqh, 56.25cqw);
+    transform: translate(-50%, -50%);
+    border: 0;
+    pointer-events: none;
+}
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -434,6 +448,12 @@ video {
     position: relative;
     z-index: 2;
     width: 100%;
+    transition: opacity .7s ease;
+}
+.hero-content.hero-copy-pending {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 .hero-copy {
     max-width: 900px;
@@ -595,14 +615,54 @@ video {
 ===================================================== */
 
 .cec-about-image-wrap {
-    position: sticky;
-    top: 90px;
+    position: relative;
+    top: auto;
     height: 100%;
     min-height: 560px;
     display: flex;
     align-items: stretch;
     padding: 0 0 0 0;
     z-index: 2;
+}
+
+.cec-about-image-track {
+    width: 100%;
+    height: 100%;
+}
+
+/* Extend only the sticky containing block, not the section's layout height.
+   This prevents the photo being pushed upward at the section's bottom.
+   The section's overflow: clip progressively hides the anchored photo. */
+@media (min-width: 992px) {
+    /* Clip horizontal overflow without creating an ancestor scroll container
+       that can capture About Us's sticky positioning. Homepage only. */
+    body:has(#about.cec-about) {
+        overflow-x: clip;
+    }
+
+    #about.cec-about {
+        --about-image-top: 90px; /* Existing desktop navbar height. */
+        --about-image-height: calc(100vh - var(--about-image-top));
+    }
+
+    #about.cec-about .cec-about-image-wrap {
+        height: auto;
+        min-height: 560px;
+        align-self: stretch;
+    }
+
+    #about.cec-about .cec-about-image-track {
+        position: absolute;
+        inset: 0 0 calc(-1 * var(--about-image-height));
+        height: auto;
+    }
+
+    #about.cec-about .cec-about-image {
+        position: sticky;
+        top: var(--about-image-top);
+        height: var(--about-image-height);
+    }
+
 }
 
 
