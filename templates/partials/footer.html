@@ -1,7 +1,55 @@
 {% load static %}
-<footer id="contact" class="cec-footer"><div class="cec-footer-accent" aria-hidden="true"></div><div class="container"><div class="row gy-5 gx-lg-5 cec-footer-main">
-  <div class="col-12 col-lg-4"><a class="cec-footer-brand" href="{% url 'core:home' %}"><img src="{% static 'images/CEC LOGO.png' %}" alt="Century Engineering Contractors"></a><p class="cec-footer-about">Engineering Rwanda's future through dependable civil, electrical and electromechanical solutions built to last.</p><div class="cec-footer-social"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a></div></div>
-  <div class="col-6 col-md-4 col-lg-2"><h2>Quick Links</h2><ul class="cec-footer-links"><li><a href="{% url 'core:home' %}">Home</a></li><li><a href="{% url 'core:about' %}">About Us</a></li><li><a href="{% url 'services:list' %}">Services</a></li><li><a href="{% url 'projects:list' %}">Projects</a></li><li><a href="{% url 'core:careers' %}">Careers</a></li><li><a href="{% url 'news:list' %}">News</a></li><li><a href="{% url 'contact:contact' %}">Contact Us</a></li></ul></div>
-  <div class="col-6 col-md-4 col-lg-3"><h2>Our Services</h2><ul class="cec-footer-links"><li><a href="{% url 'services:legacy' slug='power-transmission' %}">Power Transmission &amp; Distribution</a></li><li><a href="{% url 'services:legacy' slug='building' %}">Building &amp; Infrastructure Development</a></li><li><a href="{% url 'services:legacy' slug='civil-structural' %}">Civil &amp; Structural Engineering</a></li><li><a href="{% url 'services:legacy' slug='mep' %}">Electromechanical / MEP Engineering</a></li><li><a href="{% url 'services:legacy' slug='marine' %}">Marine &amp; Port Construction</a></li><li><a href="{% url 'services:legacy' slug='water' %}">Water Supply &amp; Sanitation</a></li></ul></div>
-  <div class="col-12 col-md-4 col-lg-3"><h2>Get In Touch</h2><ul class="cec-footer-contact"><li><i class="bi bi-geo-alt-fill"></i><span>Gasabo – Gacuriro<br>Kigali, Rwanda</span></li><li><i class="bi bi-telephone-fill"></i><a href="tel:+250786420337">+250 786 420 337</a></li><li><i class="bi bi-envelope-fill"></i><a href="mailto:info@cec.rw">info@cec.rw</a></li></ul><a class="cec-footer-cta" href="{% if footer_cta %}{{ footer_cta }}{% else %}mailto:info@cec.rw{% endif %}">START A PROJECT <span aria-hidden="true">→</span></a></div>
-</div><div class="cec-footer-bottom"><p>© 2026 Century Engineering Contractors Ltd. All rights reserved.</p><a href="#top">Back to top <i class="bi bi-arrow-up" aria-hidden="true"></i></a></div></div></footer>
+<footer id="contact" class="cec-footer">
+  <div class="cec-footer-accent" aria-hidden="true"></div>
+  <div class="container">
+    <div class="row gy-5 gx-lg-5 cec-footer-main">
+      <div class="col-12 col-lg-4"><a class="cec-footer-brand" href="{% url 'core:home' %}"><img
+            src="{% static 'images/CEC LOGO.png' %}" alt="Century Engineering Contractors"></a>
+        <p class="cec-footer-about">Engineering Rwanda's future through dependable civil, electrical and
+          electromechanical solutions built to last.</p>
+        <div class="cec-footer-social"><a href="https://www.facebook.com/EpcaGroup" aria-label="Facebook"><i
+              class="bi bi-facebook"></i></a><a href="https://www.linkedin.com/company/epc-africa-group/"
+            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://www.instagram.com/epc_africa_group?igsi=NjhmYXlqdnU0Z3Z4" aria-label="Instagram"><i
+              class="bi bi-instagram"></i></a><a href="https://x.com/epcafrica" aria-label="X"><i class="bi bi-twitter-x"></i></a></div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <h2>Quick Links</h2>
+        <ul class="cec-footer-links">
+          <li><a href="{% url 'core:home' %}">Home</a></li>
+          <li><a href="{% url 'core:about' %}">About Us</a></li>
+          <li><a href="{% url 'services:list' %}">Services</a></li>
+          <li><a href="{% url 'projects:list' %}">Projects</a></li>
+          <li><a href="{% url 'core:careers' %}">Careers</a></li>
+          <li><a href="{% url 'news:list' %}">News</a></li>
+          <li><a href="{% url 'contact:contact' %}">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <h2>Our Services</h2>
+        <ul class="cec-footer-links">
+          <li><a href="{% url 'services:legacy' slug='power-transmission' %}">Power Transmission &amp; Distribution</a>
+          </li>
+          <li><a href="{% url 'services:legacy' slug='building' %}">Building &amp; Infrastructure Development</a></li>
+          <li><a href="{% url 'services:legacy' slug='civil-structural' %}">Civil &amp; Structural Engineering</a></li>
+          <li><a href="{% url 'services:legacy' slug='mep' %}">Electromechanical / MEP Engineering</a></li>
+          <li><a href="{% url 'services:legacy' slug='marine' %}">Marine &amp; Port Construction</a></li>
+          <li><a href="{% url 'services:legacy' slug='water' %}">Water Supply &amp; Sanitation</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <h2>Get In Touch</h2>
+        <ul class="cec-footer-contact">
+          <li><i class="bi bi-geo-alt-fill"></i><span>Gasabo – Gacuriro<br>Kigali, Rwanda</span></li>
+          <li><i class="bi bi-telephone-fill"></i><a href="tel:+250786420337">+250 786 420 337</a></li>
+          <li><i class="bi bi-envelope-fill"></i><a href="mailto:info@cec.rw">info@cec.rw</a></li>
+        </ul><a class="cec-footer-cta"
+          href="{% if footer_cta %}{{ footer_cta }}{% else %}mailto:info@cec.rw{% endif %}">START A PROJECT <span
+            aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="cec-footer-bottom">
+      <p>© 2026 Century Engineering Contractors Ltd. All rights reserved.</p><a href="#top">Back to top <i
+          class="bi bi-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</footer>

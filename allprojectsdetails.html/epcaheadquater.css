@@ -51,7 +51,7 @@ body { margin:0; overflow-x:hidden; background:#fff; color:var(--detail-ink); fo
 .scope-grid { display:grid; grid-template-columns:repeat(6,1fr); border:1px solid #e0e4e8; }
 .scope-item { min-width:0; padding:24px 18px; border-right:1px solid #e0e4e8; }
 .scope-item:last-child { border-right:0; }
-.scope-item strong { display:block; color:var(--detail-gold); font-size:28px; line-height:1; }
+.scope-item > strong { display:block; color:var(--detail-gold); font-size:28px; line-height:1; }
 .scope-item>i { display:block; margin:16px 0; color:var(--detail-gold); font-size:29px; }
 .scope-icon { display:block; width:32px; height:32px; margin:16px 0; fill:none; stroke:var(--detail-gold); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
 .scope-item h2 { margin:0 0 8px; font-family:'Manrope',sans-serif; font-size:16px; font-weight:800; line-height:1.3; }
@@ -89,3 +89,12 @@ body.lightbox-open { overflow:hidden; }
   .project-tabs a { font-size:14px; }
   .project-breadcrumb { font-size:14px; }
 }
+
+/* Shared project layout variants for one confirmed scope item and one photo. */
+.scope-grid.scope-grid-single { grid-template-columns: minmax(0, 1fr); width: 100%; max-width: 420px; }
+.scope-grid-single .scope-item { border: 0; }
+.scope-grid-single .scope-item h2 { font-size: 16px; line-height: 1.3; }
+.scope-grid-single .scope-item p { font-size: 13px; line-height: 1.55; text-align: left; }
+.scope-grid-single .scope-item p strong { display: inline; font-size: inherit; line-height: inherit; color: inherit; }
+.gallery-track.gallery-track-single { animation: none; will-change: auto; }
+.gallery-track-single img:focus-visible { outline: 3px solid var(--detail-gold); outline-offset: -3px; }

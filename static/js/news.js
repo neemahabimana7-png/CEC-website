@@ -68,7 +68,10 @@ const newsArticles = [
 ];
 
 const galleryData = document.querySelector('#gallery-items-data');
-const galleryItems = galleryData ? JSON.parse(galleryData.textContent) : [];
+const galleryItems = (galleryData ? JSON.parse(galleryData.textContent) : []).map((item) => ({
+  ...item,
+  category: /^power\s*(?:&|&amp;)\s*energy$/i.test(item.category || '') ? 'Energy Projects' : item.category
+}));
 
 const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, character => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[character]);
 

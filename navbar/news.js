@@ -64,14 +64,14 @@ const newsArticles = [
 ];
 
 const galleryItems = [
-  { image: '../images/B58A4353.jpg', name: 'Shango–Birembo Transmission Line', category: 'Power & Energy' },
+  { image: '../images/B58A4353.jpg', name: 'Shango–Birembo Transmission Line', category: 'Energy Projects' },
   { image: 'https://static.wixstatic.com/media/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg/v1/fill/w_1200,h_650,al_c,q_90,enc_avif,quality_auto/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg', name: 'EPCA Group Headquarters', category: 'Buildings' },
   { image: '../images/Capture.PNG', name: 'Rubavu Port', category: 'Marine & Civil Works' },
   { image: '../images/Rusizi port.jpg', name: 'Rusizi Port', category: 'Marine & Civil Works' },
   { image: '../images/luxury-apartments-blocks.jpg', name: 'Luxury Apartments – Kagarama', category: 'Buildings' },
   { image: '../images/akagera-game-lodge.jpg', name: 'Akagera Game Lodge', category: 'Buildings' },
   { image: '../images/residential-house-kimihurura.jpg', name: 'Kimihurura Residential House', category: 'Buildings' },
-  { image: '../images/keya-hpp.jpg', name: 'Keya Hydropower Plant', category: 'Power & Energy' },
+  { image: '../images/keya-hpp.jpg', name: 'Keya Hydropower Plant', category: 'Energy Projects' },
   { image: '../images/rubavu3.PNG', name: 'Rubavu Port Infrastructure', category: 'Marine & Civil Works' }
 ];
 

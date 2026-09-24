@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="../navbar/style.css" rel="stylesheet">
+    <link href="../navbar/style.css?v=projects-dropdown-2" rel="stylesheet">
     <link href="./marine.css" rel="stylesheet">
 </head>
 <body id="top">
@@ -28,7 +28,15 @@
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="../navbar/aboutus.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link active" href="../services/allservices.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="../allprojects/allprojects.html">Projects</a></li>
+          <li class="nav-item cec-projects-nav">
+  <div class="cec-projects-trigger"><a class="nav-link" href="../allprojects/allprojects.html">Projects</a><button class="cec-projects-toggle" type="button" aria-label="Toggle project categories" aria-expanded="false" aria-controls="cec-projects-menu"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+  <ul class="cec-projects-menu" id="cec-projects-menu" aria-label="Project categories" hidden>
+    <li><a href="../allprojects/allprojects.html?category=power" data-project-category="power">Energy Projects</a></li>
+    <li><a href="../allprojects/allprojects.html?category=buildings" data-project-category="buildings">Buildings</a></li>
+    <li><a href="../allprojects/allprojects.html?category=marine" data-project-category="marine">Marine &amp; Civil</a></li>
+    <li><a href="../allprojects/allprojects.html?category=industrial" data-project-category="industrial">Industrial &amp; Infrastructure</a></li>
+  </ul>
+</li>
           <li class="nav-item"><a class="nav-link" href="../navbar/clients.html">Clients | Partners</a></li>
           <li class="nav-item"><a class="nav-link" href="../navbar/careers.html">Careers</a></li><li class="nav-item"><a class="nav-link" href="../navbar/news.html">News</a></li>
           <li class="nav-item"><a class="nav-link" href="../navbar/contactus.html">Contact Us</a></li>
@@ -87,8 +95,8 @@
               <div class="project-slides"><img class="is-active" src="../images/Rusizi port.jpg" alt="Rusizi Port view 1" loading="lazy"><img src="../images/Rusizi port.jpg" alt="Rusizi Port view 2"><img src="../images/Rusizi port.jpg" alt="Rusizi Port view 3"><img src="../images/Rusizi port.jpg" alt="Rusizi Port view 4"><img src="../images/Rusizi port.jpg" alt="Rusizi Port view 5"></div>
               <figcaption>Rusizi Port</figcaption>
             </figure>
-            <figure class="project-photo project-slider reveal-item" data-slider>
-              <div class="project-slides"><img class="is-active" src="../images/cyimbili-mhpp.jpg" alt="Karongi Auxiliary Quay view 1" loading="lazy"><img src="../images/cyimbili-mhpp.jpg" alt="Karongi Auxiliary Quay view 2"><img src="../images/cyimbili-mhpp.jpg" alt="Karongi Auxiliary Quay view 3"><img src="../images/cyimbili-mhpp.jpg" alt="Karongi Auxiliary Quay view 4"><img src="../images/cyimbili-mhpp.jpg" alt="Karongi Auxiliary Quay view 5"></div>
+            <figure class="project-photo project-photo-karongi project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="../static/images/Karongi%20quay.avif" alt="Karongi Auxiliary Quay view 1" loading="lazy"><img src="../static/images/Karongi%20quay.avif" alt="Karongi Auxiliary Quay view 2" loading="lazy"><img src="../static/images/Karongi%20quay.avif" alt="Karongi Auxiliary Quay view 3" loading="lazy"><img src="../static/images/Karongi%20quay.avif" alt="Karongi Auxiliary Quay view 4" loading="lazy"><img src="../static/images/Karongi%20quay.avif" alt="Karongi Auxiliary Quay view 5" loading="lazy"></div>
               <figcaption>Karongi Auxiliary Quay</figcaption>
             </figure>
           </div>
@@ -141,5 +149,6 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="./marine.js"></script>
+<script src="../navbar/homepage.js?v=projects-dropdown-2" data-navbar-only></script>
 </body>
 </html>

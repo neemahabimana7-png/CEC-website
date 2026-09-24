@@ -14,7 +14,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-  <link href="./navbar/style.css?v=services-layout-3" rel="stylesheet">
+  <link href="./navbar/style.css?v=projects-dropdown-2" rel="stylesheet">
 </head>
 
 <body>
@@ -34,7 +34,15 @@
             <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="./navbar/aboutus.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="./services/allservices.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="./allprojects/allprojects.html">Projects</a></li>
+            <li class="nav-item cec-projects-nav">
+  <div class="cec-projects-trigger"><a class="nav-link" href="./allprojects/allprojects.html">Projects</a><button class="cec-projects-toggle" type="button" aria-label="Toggle project categories" aria-expanded="false" aria-controls="cec-projects-menu"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+  <ul class="cec-projects-menu" id="cec-projects-menu" aria-label="Project categories" hidden>
+    <li><a href="./allprojects/allprojects.html?category=power" data-project-category="power">Energy Projects</a></li>
+    <li><a href="./allprojects/allprojects.html?category=buildings" data-project-category="buildings">Buildings</a></li>
+    <li><a href="./allprojects/allprojects.html?category=marine" data-project-category="marine">Marine &amp; Civil</a></li>
+    <li><a href="./allprojects/allprojects.html?category=industrial" data-project-category="industrial">Industrial &amp; Infrastructure</a></li>
+  </ul>
+</li>
             <li class="nav-item"><a class="nav-link" href="./navbar/clients.html">Clients | Partners</a></li>
             <li class="nav-item"><a class="nav-link" href="./navbar/careers.html">Careers</a></li>
             <li class="nav-item"><a class="nav-link" href="./navbar/news.html">News</a></li>
@@ -89,46 +97,44 @@
             <article class="cec-specialization">
               <span class="cec-specialization-icon"><i class="bi bi-lightning-charge-fill"
                   aria-hidden="true"></i></span>
-              <p><strong>Power Generation</strong><span>Infrastructure Projects.</span></p>
+              <p><strong>Power Generation Infrastructure Projects.</strong></p>
             </article>
             <article class="cec-specialization">
               <span class="cec-specialization-icon"><i class="bi bi-broadcast" aria-hidden="true"></i></span>
-              <p><strong>Power Transmission and</strong><span>Distribution Projects.</span></p>
+              <p><strong>Power Transmission and Distribution Projects.</strong></p>
             </article>
             <article class="cec-specialization">
               <span class="cec-specialization-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
-              <p><strong>Real Estates, Affordable</strong><span>Housing &amp; Community Development Projects.</span></p>
+              <p><strong>Real Estates, Affordable Housing &amp; Community Development Projects.</strong></p>
             </article>
             <article class="cec-specialization">
               <span class="cec-specialization-icon"><i class="bi bi-droplet-fill" aria-hidden="true"></i></span>
-              <p><strong>Water Supply and</strong><span>Sanitation Projects.</span></p>
+              <p><strong>Water Supply and Sanitation Projects.</strong></p>
             </article>
             <article class="cec-specialization">
               <span class="cec-specialization-icon"><i class="bi bi-water" aria-hidden="true"></i></span>
-              <p><strong>Marine and Civil</strong><span>Construction related Works.</span></p>
+              <p><strong>Marine and Civil Construction related Works.</strong></p>
             </article>
           </div>
-        </div>
+          <section class="cec-achievements" aria-labelledby="achievements-title">
+            <div class="cec-achievements-container">
+              <header class="cec-achievements-heading">
+                <span>HISTORICAL ACHIEVEMENTS</span>
+                <h3 id="achievements-title">Building Milestones. Creating Impact.</h3>
+              </header>
+              <article class="cec-achievement-item">
+                <span class="cec-achievement-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 5 13 43m11-38 11 38M18 24h12M15 34h18M13 43l17-19M35 43 18 24M16 15h16M13 20h22M19 15v5m10-5v5M9 12v9m30-9v9M5 9v15m38-15v15"/></svg></span>
+                <p>CEC Ltd made the history of being the first Rwandan company that successfully built a 220kV Transmission
+                Line; a portion of Shango-Birembo Line interconnecting Rwanda and DRC.</p>
+              </article>
+              <article class="cec-achievement-item">
+                <span class="cec-achievement-icon"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M7 28l17-5 17 5-6 11H13L7 28Zm9-3V14h16v11M21 14V8h6v6M24 23v14M19 19h3m4 0h3M4 41q5-5 10 0 5 5 10 0 5-5 10 0 5 5 10 0"/></svg></span>
+                <p>CEC Ltd is also renowned for the design and construction of Rwanda's first commercial port on the scenic
+                shores of Lake Kivu in Rubavu District.</p>
+              </article>
+            </div>
+          </section>
       </div>
-    </section>
-
-    <section class="cec-achievements" aria-labelledby="achievements-title">
-      <div class="cec-achievements-container">
-        <header class="cec-achievements-heading">
-          <span>HISTORICAL ACHIEVEMENTS</span>
-          <h2 id="achievements-title">Building Milestones.<br>Creating Impact.</h2>
-          <div class="cec-gold-line" aria-hidden="true"></div>
-        </header>
-        <article class="cec-achievement-item">
-          <span class="cec-achievement-icon"><i class="bi bi-broadcast" aria-hidden="true"></i></span>
-          <p>CEC Ltd made the history of being the first Rwandan company that successfully built a 220kV Transmission
-            Line; a portion of Shango-Birembo Line interconnecting Rwanda and DRC.</p>
-        </article>
-        <article class="cec-achievement-item">
-          <span class="cec-achievement-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
-          <p>CEC Ltd is also renowned for the design and construction of Rwanda's first commercial port on the scenic
-            shores of Lake Kivu in Rubavu District.</p>
-        </article>
       </div>
     </section>
 
@@ -530,7 +536,7 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 
-  <script defer src="./navbar/homepage.js"></script>
+  <script defer src="./navbar/homepage.js?v=projects-dropdown-2"></script>
 </body>
 
 </html>

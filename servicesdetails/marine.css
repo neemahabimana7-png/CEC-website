@@ -148,3 +148,6 @@
   .reveal-item { opacity: 1; transform: none; transition: none; }
   .capability-item, .capability-icon, .capability-item h3, .project-photo img, .project-photo figcaption { transition: none; }
 }
+
+/* Keep the workers visible in the portrait Karongi photo. */
+.project-photo-karongi img { object-position: center 25%; }

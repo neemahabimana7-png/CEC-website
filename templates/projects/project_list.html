@@ -30,8 +30,7 @@
       <div class="project-filters" role="group" aria-label="Filter projects by sector">
         <button class="filter-btn active" type="button" data-filter="all"><i class="bi bi-grid"></i><span>All
             Projects</span></button>
-        <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Power
-            &amp; Energy</span></button>
+        <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Energy Projects</span></button>
         <button class="filter-btn" type="button" data-filter="buildings"><i
             class="bi bi-buildings"></i><span>Buildings</span></button>
         <button class="filter-btn" type="button" data-filter="marine"><i class="bi bi-water"></i><span>Marine &amp;
@@ -41,16 +40,18 @@
       </div>
 
       <div class="projects-grid">
-        <article class="project-card" data-category="power"><img src="{% static 'images/B58A4353.jpg' %}"
+        
+        <article class="project-card" data-category="power"><img src="{% static 'images/shango-Birembo.avif' %}"
             alt="Transmission line construction">
-          <div class="project-card-body"><span>Power &amp; Energy</span>
+          <div class="project-card-body"><span>Energy Projects</span>
             <h2>220kV Transmission Line</h2>
             <p><i class="bi bi-geo-alt-fill"></i> Shango – Birembo, Rwanda</p><a
               href="{% url 'projects:legacy' slug='shango-birembo-transmission' %}"">View Project <i class=" bi
               bi-arrow-right"></i></a>
           </div>
         </article>
-        <article class="project-card" data-category="buildings"><img src="https://static.wixstatic.com/media/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg/v1/fill/w_952,h_1042,q_90,enc_avif,quality_auto/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg"
+        <article class="project-card" data-category="buildings"><img
+            src="https://static.wixstatic.com/media/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg/v1/fill/w_952,h_1042,q_90,enc_avif,quality_auto/6a77e1_3c205c16feb94b99bff6985abb0ec336~mv2.jpg"
             alt="EPCA Group Headquarters">
           <div class="project-card-body"><span>Buildings</span>
             <h2>EPCA Group Headquarters</h2>
@@ -73,6 +74,22 @@
             <h2>Rusizi Port</h2>
             <p><i class="bi bi-geo-alt-fill"></i> Rusizi, Rwanda</p><a
               href="{% url 'projects:legacy' slug='rusizi-port' %}"">View Project <i class=" bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+        <article class="project-card" data-category="power">
+          <img src="{% static 'images/Kilinda station.avif' %}" alt="Kilinda Substation transformer upgrade" loading="lazy" decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>Kilinda Substation Upgrade</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
+            <a href="{% url 'projects:legacy' slug='kilinda-substation' %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+        <article class="project-card" data-category="power">
+          <img src="{% static 'images/Nyabarongo substation.avif' %}" alt="Nyabarongo Substation transformer and site workers" loading="lazy" decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>Nyabarongo Substation</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
+            <a href="{% url 'projects:legacy' slug='nyabarongo-substation' %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -116,7 +133,7 @@
         </article>
         <article class="project-card" data-category="power"><img src="{% static 'images/nkora-mhpp.jpg' %}"
             alt="Hydropower works">
-          <div class="project-card-body"><span>Power &amp; Energy</span>
+          <div class="project-card-body"><span>Energy Projects</span>
             <h2>Keya, Nkora &amp; Cyimbili HPP Works</h2>
             <p><i class="bi bi-geo-alt-fill"></i> Rwanda</p><a
               href="{% url 'projects:legacy' slug='keya-nkora-cyimbili-hpp' %}"">View Project <i class=" bi
@@ -132,7 +149,7 @@
               bi-arrow-right"></i></a>
           </div>
         </article>
-        <article class="project-card" data-category="marine"><img src="{% static 'images/Marineservice.jpg' %}"
+        <article class="project-card" data-category="marine"><img src="{% static 'images/Karongi quay.avif' %}"
             alt="Karongi Auxiliary Quay">
           <div class="project-card-body"><span>Marine &amp; Civil</span>
             <h2>Karongi Auxiliary Quay</h2>
@@ -158,11 +175,28 @@
 {% endblock %}
 {% block scripts %}
 <script>
-  document.querySelectorAll('.filter-btn').forEach((button) => button.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach((item) => item.classList.remove('active'));
-    button.classList.add('active');
-    const filter = button.dataset.filter;
-    document.querySelectorAll('.project-card').forEach((card) => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
-  }));
+  (() => {
+    const buttons = [...document.querySelectorAll('.filter-btn')];
+    const cards = [...document.querySelectorAll('.projects-grid .project-card')];
+    const applyFilter = (requested) => {
+      const filter = buttons.some((button) => button.dataset.filter === requested) ? requested : 'all';
+      buttons.forEach((button) => {
+        const active = button.dataset.filter === filter;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      cards.forEach((card) => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
+      window.dispatchEvent(new Event('cec:project-filter'));
+    };
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      const url = new URL(window.location.href);
+      if (button.dataset.filter === 'all') url.searchParams.delete('category');
+      else url.searchParams.set('category', button.dataset.filter);
+      history.pushState(null, '', url);
+      applyFilter(button.dataset.filter);
+    }));
+    window.addEventListener('popstate', () => applyFilter(new URL(window.location.href).searchParams.get('category')));
+    applyFilter(new URL(window.location.href).searchParams.get('category'));
+  })();
 </script>
 {% endblock %}

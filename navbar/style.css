@@ -984,7 +984,7 @@ video {
 
 .cec-values {
 
-    background: #D89A1D;
+    background: #f0f1f2;
 
     color: #102b47 ;
 
@@ -2371,4 +2371,128 @@ main {
         transform: none !important;
         animation: none !important;
     }
+}
+
+/* Homepage About Us: integrated specializations and historical achievements. */
+.cec-about .cec-about-content {
+    padding: 32px clamp(24px, 2.3vw, 48px) 40px;
+    color: #102b47;
+}
+.cec-about .cec-about-title { font-size: 28px; line-height: 1.15; }
+.cec-about .cec-gold-line { margin: 10px 0 14px; }
+.cec-about .cec-about-intro { font-size: 15px; color: #102b47; line-height: 1.5; margin-bottom: 22px; }
+.cec-about .cec-specializations {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr);
+    gap: 16px 24px;
+}
+.cec-about .cec-specialization {
+    min-width: 0;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 14px;
+    padding: 0;
+}
+.cec-about .cec-specialization:last-child { grid-column: 1 / -1; }
+.cec-about .cec-specialization-icon {
+    width: 38px; height: 38px;
+    background: #102b47; color: #efa922; font-size: 20px;
+}
+.cec-about .cec-specialization p { font-size: 15px; line-height: 1.4; }
+.cec-about .cec-specialization strong { display: inline; font-weight: 700; }
+.cec-about .cec-achievements {
+    margin-top: 26px;
+    padding: 22px 0 0;
+    border-top: 1px solid rgba(16, 43, 71, .25);
+    background: transparent;
+}
+.cec-about .cec-achievements-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+.cec-about .cec-achievements-heading { grid-column: 1 / -1; margin: 0; }
+.cec-about .cec-achievements-heading span {
+    color: #102b47; font-size: 13px; font-weight: 700; letter-spacing: 2px;
+}
+.cec-about .cec-achievements-heading h3 {
+    margin: 7px 0 0; color: #102b47; font-size: 22px;
+    font-weight: 700; line-height: 1.2;
+}
+.cec-about .cec-achievement-item {
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: start; gap: 14px; margin: 0; padding: 0; border: 0;
+}
+.cec-about .cec-achievement-icon {
+    width: 44px; height: 44px; background: #102b47; color: #efa922;
+}
+.cec-about .cec-achievement-icon svg {
+    width: 28px; height: 28px; fill: none; stroke: currentColor;
+    stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.cec-about .cec-achievement-item p {
+    border-left: 1px solid rgba(16, 43, 71, .35);
+    padding-left: 14px; font-size: 14px; line-height: 1.55;
+}
+@media (min-width: 1600px) {
+    .cec-about-container { width: 100%; }
+}
+@media (min-width: 851px) and (max-width: 1100px) {
+    .cec-about .cec-specializations { column-gap: 16px; }
+    .cec-about .cec-specialization { grid-template-columns: 36px minmax(0, 1fr); gap: 10px; }
+    .cec-about .cec-specialization-icon { width: 36px; height: 36px; font-size: 18px; }
+    .cec-about .cec-achievement-item { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+    .cec-about .cec-about-content { padding: 32px 22px 40px; }
+    .cec-about .cec-specializations,
+    .cec-about .cec-achievements-container { grid-template-columns: minmax(0, 1fr); }
+    .cec-about .cec-specialization:last-child { grid-column: auto; }
+    .cec-about .cec-achievement-item { grid-template-columns: 44px minmax(0, 1fr); }
+}
+
+/* Projects dropdown: shared by the regular and fluid navbars. */
+.navbar .cec-projects-nav { position: relative; }
+.navbar .cec-projects-trigger { display: flex; align-items: center; white-space: nowrap; }
+@media (min-width: 992px) {
+    .navbar .cec-projects-trigger > .nav-link { padding-right: 2px !important; }
+    .navbar .cec-projects-toggle { margin-left: -2px; }
+}
+.navbar .cec-projects-menu[hidden] { display: none !important; }
+.navbar .cec-projects-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 0 0 20px; width: 20px; height: 36px; padding: 0;
+    border: 0; border-radius: 3px; background: transparent; color: #fff;
+}
+.navbar .cec-projects-trigger:has(.nav-link.active) .cec-projects-toggle,
+.navbar .cec-projects-toggle:hover { color: #D89A1D; }
+.navbar .cec-projects-toggle svg { transition: transform 150ms ease; }
+.navbar .cec-projects-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.navbar .cec-projects-menu {
+    position: absolute; top: 100%; left: 0; z-index: 1050;
+    width: 270px; margin: 0; padding: 7px; list-style: none;
+    background: #fff; border: 1px solid rgba(11, 31, 58, .12); border-radius: 5px;
+    box-shadow: 0 5px 14px rgba(11, 31, 58, .08);
+    visibility: hidden; opacity: 0; pointer-events: none;
+    transition: opacity 150ms ease, visibility 150ms ease;
+}
+.navbar .cec-projects-nav.is-open > .cec-projects-menu {
+    visibility: visible; opacity: 1; pointer-events: auto;
+}
+.navbar .cec-projects-menu a {
+    display: block; padding: 11px 13px; border-radius: 3px;
+    color: #0B1F3A; font-size: 14px; font-weight: 600; line-height: 1.5;
+    text-decoration: none; transition: background-color 150ms ease, color 150ms ease;
+}
+.navbar .cec-projects-menu a:hover,
+.navbar .cec-projects-menu a:focus-visible,
+.navbar .cec-projects-menu a.active { background: #fff7e6; color: #996700; }
+.navbar .cec-projects-trigger > a:focus-visible,
+.navbar .cec-projects-toggle:focus-visible,
+.navbar .cec-projects-menu a:focus-visible { outline: 2px solid #D89A1D; outline-offset: 2px; }
+@media (max-width: 991.98px) {
+    .navbar .cec-projects-trigger > .nav-link { flex: 1; width: auto; }
+    .navbar .cec-projects-toggle { flex-basis: 44px; width: 44px; height: 44px; }
+    .navbar .cec-projects-menu { position: static; display: none; width: 100%; box-shadow: none; }
+    .navbar .cec-projects-nav.is-open > .cec-projects-menu { display: block; }
+    .navbar .cec-projects-menu a { min-height: 44px; }
 }

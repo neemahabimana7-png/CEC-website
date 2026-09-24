@@ -1,3 +1,65 @@
+// Shared Projects navigation, also loaded on pages without homepage effects.
+(() => {
+  document.querySelectorAll('.cec-projects-nav').forEach((item) => {
+    if (item.dataset.initialized) return;
+    item.dataset.initialized = 'true';
+    const toggle = item.querySelector('.cec-projects-toggle');
+    const menu = item.querySelector('.cec-projects-menu');
+    const desktop = window.matchMedia('(min-width: 992px)');
+    const setOpen = (open) => {
+      menu.hidden = !open;
+      item.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    item.addEventListener('pointerenter', (event) => {
+      if (desktop.matches && event.pointerType === 'mouse') setOpen(true);
+    });
+    item.addEventListener('pointerleave', () => {
+      if (desktop.matches && !item.contains(document.activeElement)) setOpen(false);
+    });
+    item.addEventListener('focusin', (event) => {
+      if (desktop.matches && event.target !== toggle) setOpen(true);
+    });
+    item.addEventListener('focusout', (event) => {
+      if (!item.contains(event.relatedTarget)) setOpen(false);
+    });
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    item.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        event.stopPropagation();
+        toggle.focus();
+        setOpen(false);
+      } else if (event.key === 'ArrowDown' && !menu.contains(event.target)) {
+        event.preventDefault();
+        setOpen(true);
+        menu.querySelector('a').focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (!item.contains(event.target)) setOpen(false);
+    });
+    item.closest('.offcanvas')?.addEventListener('hidden.bs.offcanvas', () => setOpen(false));
+    desktop.addEventListener('change', () => setOpen(false));
+    const updateActive = () => {
+      const current = new URL(window.location.href);
+      const selected = current.searchParams.get('category') || 'all';
+      menu.querySelectorAll('a').forEach((link) => {
+        const destination = new URL(link.href, current);
+        const active = destination.pathname === current.pathname && link.dataset.projectCategory === selected;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+    };
+    window.addEventListener('cec:project-filter', updateActive);
+    window.addEventListener('popstate', updateActive);
+    updateActive();
+  });
+})();
+
+(() => {
+if (document.currentScript?.hasAttribute('data-navbar-only')) return;
 const navbar = document.querySelector('.navbar');
 const revealItems = document.querySelectorAll('.reveal-up');
 const projectSlides = document.querySelectorAll('.project-slide');
@@ -266,3 +328,5 @@ if (canLoadHeroVideo) {
   };
   scheduleVideo();
 }
+
+})();

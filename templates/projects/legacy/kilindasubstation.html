@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}{% include "partials/navbar_fluid.html" %}{% endblock %}
+{% block title %}Kilinda Substation Upgrade | CEC{% endblock %}
+{% block meta_description %}<meta name="description" content="EPC for the upgrade of the Kilinda transformer from 1.6 MVA to 10 MVA for improved reliability.">{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+{% endblock %}
+{% block extra_css %}<link href="{% static 'css/epcaheadquater.css' %}?v=kilinda-scope-6" rel="stylesheet">{% endblock %}
+{% block body_attrs %} id="top"{% endblock %}
+{% block content %}
+
+  <main class="project-detail">
+  <div class="project-breadcrumb"><div class="container"><a href="{% url 'core:home' %}">Home</a><span>/</span><a href="{% url 'projects:list' %}">Projects</a><span>/</span><strong>Kilinda Substation Upgrade</strong></div></div>
+  <section class="project-intro" aria-labelledby="project-title">
+    <div class="container"><div class="row g-5 align-items-center">
+      <div class="col-12 col-lg-5"><div class="project-intro-content reveal">
+        <h1 id="project-title">Kilinda Substation<br>Upgrade</h1>
+        <i class="heading-rule" aria-hidden="true"></i>
+        <div class="project-description"><p>CEC carried out the EPC upgrade of the Kilinda Substation transformer capacity from 1.6 MVA to 10 MVA, strengthening the substation's capacity and improving power-system reliability.</p></div>
+        <dl class="project-meta">
+          <div><i class="bi bi-lightning-charge" aria-hidden="true"></i><span><dt>PROJECT TYPE</dt><dd>Substation Transformer Upgrade</dd></span></div>
+          <div><i class="bi bi-gear" aria-hidden="true"></i><span><dt>DELIVERY</dt><dd>Engineering, Procurement &amp; Construction</dd></span></div>
+          <div><i class="bi bi-arrow-up-right" aria-hidden="true"></i><span><dt>CAPACITY UPGRADE</dt><dd>1.6 MVA to 10 MVA</dd></span></div>
+          <div><i class="bi bi-calendar-check" aria-hidden="true"></i><span><dt>STATUS</dt><dd>Completed</dd></span></div>
+        </dl>
+      </div></div>
+      <div class="col-12 col-lg-7"><div class="project-video-wrap reveal">
+        <img class="project-video" src="{% static 'images/Kilinda station.avif' %}" width="952" height="1042" alt="Crane, transformer and workers at Kilinda Substation" decoding="async">
+      </div></div>
+    </div></div>
+  </section>
+  <section class="project-scope" id="scope" aria-labelledby="scope-title">
+    <h2 class="section-kicker reveal" id="scope-title">SCOPE OF WORK</h2>
+    <i class="section-rule reveal" aria-hidden="true"></i>
+    <div class="scope-grid scope-grid-single">
+      <article class="scope-item reveal">
+        <strong>01</strong>
+        <i class="bi bi-lightning-charge" aria-hidden="true"></i>
+        <h2>EPC Substation Upgrade</h2>
+        <p>EPC for the upgrade of the Kilinda transformer/substation capacity from <strong>1.6 MVA to 10 MVA</strong>, improving the reliability of the power system.</p>
+      </article>
+    </div>
+  </section>
+  <section class="project-gallery" id="gallery" aria-labelledby="gallery-title">
+    <h2 class="section-kicker reveal" id="gallery-title">PROJECT GALLERY</h2>
+    <i class="section-rule reveal" aria-hidden="true"></i>
+    <div class="gallery-viewport reveal"><div class="gallery-track gallery-track-single">
+      <figure><img src="{% static 'images/Kilinda station.avif' %}" alt="Crane, transformer and workers at Kilinda Substation" loading="lazy" tabindex="0" role="button" aria-label="Enlarge Kilinda Substation project photo"></figure>
+    </div></div>
+  </section>
+  <div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" hidden><button class="gallery-lightbox-close" type="button" aria-label="Close image preview"><i class="bi bi-x-lg" aria-hidden="true"></i></button><img src="" alt=""></div>
+</main>
+  
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/epcaheadquater.js' %}?v=kilinda-scope-6"></script>
+{% endblock %}

@@ -1,9 +1,16 @@
-<section class="project-gallery" id="gallery"><span class="section-kicker reveal">PROJECT GALLERY</span><i class="section-rule reveal" aria-hidden="true"></i><div class="gallery-viewport reveal"><div class="gallery-track">
-  {% for photo in project_photos %}
-  <figure><img src="{{ photo.image.url }}" alt="{{ photo.alt_text }}" tabindex="0"></figure>
-  {% endfor %}
-  {% for photo in project_photos %}
-  <figure aria-hidden="true"><img src="{{ photo.image.url }}" alt=""></figure>
-  {% endfor %}
-</div></div></section>
-<div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" hidden><button class="gallery-lightbox-close" type="button" aria-label="Close image preview"><i class="bi bi-x-lg"></i></button><img src="" alt=""></div>
+<section class="project-gallery" id="gallery"><span class="section-kicker reveal">PROJECT GALLERY</span><i
+    class="section-rule reveal" aria-hidden="true"></i>
+  <div class="gallery-viewport reveal">
+    <div class="gallery-track">
+      {% for photo in project_photos %}
+      <figure><img src="{{ photo.image.url }}" alt="{{ photo.alt_text }}" tabindex="0"></figure>
+      {% endfor %}
+      {% for photo in project_photos %}
+      <figure aria-hidden="true"><img src="{{ photo.image.url }}" alt=""></figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Project image preview" hidden><button
+    class="gallery-lightbox-close" type="button" aria-label="Close image preview"><i
+      class="bi bi-x-lg"></i></button><img src="" alt=""></div>
