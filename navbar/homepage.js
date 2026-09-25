@@ -1,51 +1,49 @@
-// Preserve each hero's original appearance; anchor its photo only during scrolling.
+// One photo layer per banner, retaining the original responsive crop.
 (() => {
-  const heroes = [...document.querySelectorAll('.about-hero, .services-hero, .projects-hero')]
+  const heroes = [...document.querySelectorAll('.about-hero, .services-hero, .projects-hero, .careers-hero, .news-hero, .project-section-banner')]
     .filter(hero => !hero.dataset.scrollPhotoReady);
   if (!heroes.length) return;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.body.style.overflowX = 'clip';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const entries = heroes.map(hero => {
     hero.dataset.scrollPhotoReady = 'true';
-    let photo = hero.querySelector('.projects-hero-image');
-    const generated = !photo;
-    if (generated) {
-      photo = document.createElement('div');
-      photo.setAttribute('aria-hidden', 'true');
-      photo.style.cssText = 'position:absolute;inset:0;pointer-events:none;display:none;';
-      hero.prepend(photo);
-      hero.style.position = 'relative';
-      hero.style.overflow = 'hidden';
-      const content = hero.querySelector('.container');
-      if (content) { content.style.position = 'relative'; content.style.zIndex = '1'; }
-    }
-    return { hero, photo, generated };
+    const source = hero.querySelector(':scope > .projects-hero-image, :scope > img');
+    const originalBackground = hero.style.backgroundImage;
+    const track = document.createElement('div');
+    const photo = document.createElement('div');
+    track.setAttribute('aria-hidden', 'true');
+    track.style.cssText = 'position:absolute;inset:0 0 -100%;pointer-events:none;';
+    photo.style.cssText = 'position:sticky;top:0;width:100%;background-repeat:no-repeat;';
+    track.append(photo);
+    hero.prepend(track);
+    hero.style.position = 'relative';
+    hero.style.overflow = 'clip';
+    const content = hero.querySelector(':scope > .container');
+    if (content) { content.style.position = 'relative'; content.style.zIndex = '1'; }
+    return {hero, source, photo, originalBackground};
   });
-  const syncBackgrounds = () => entries.forEach(({hero, photo, generated}) => {
-    if (!generated) return;
-    const style = getComputedStyle(hero);
-    for (const property of ['backgroundImage', 'backgroundPosition', 'backgroundSize', 'backgroundRepeat', 'backgroundOrigin', 'backgroundClip', 'backgroundColor']) {
-      photo.style[property] = style[property];
+  const sync = () => entries.forEach(({hero, source, photo, originalBackground}) => {
+    // Read the original stylesheet at this breakpoint before hiding its duplicate paint.
+    if (!source) hero.style.backgroundImage = originalBackground;
+    const style = getComputedStyle(source || hero);
+    if (source?.tagName === 'IMG') {
+      photo.style.backgroundImage = 'url(' + JSON.stringify(source.currentSrc || source.src) + ')';
+      photo.style.backgroundSize = style.objectFit;
+      photo.style.backgroundPosition = style.objectPosition;
+    } else {
+      for (const key of ['backgroundImage', 'backgroundPosition', 'backgroundSize', 'backgroundRepeat', 'backgroundOrigin', 'backgroundClip', 'backgroundColor']) photo.style[key] = style[key];
     }
+    photo.style.height = hero.clientHeight + 'px';
+    photo.style.transform = source ? style.transform : 'none';
+    photo.style.position = reduced.matches ? 'relative' : 'sticky';
+    if (source) source.style.visibility = 'hidden';
+    else hero.style.backgroundImage = 'none';
   });
-  let pending = false;
-  const update = () => {
-    pending = false;
-    const navbarBottom = Math.max(0, document.querySelector('.navbar')?.getBoundingClientRect().bottom || 0);
-    entries.forEach(({hero, photo, generated}) => {
-      const rect = hero.getBoundingClientRect();
-      const offset = reducedMotion.matches ? 0 : Math.min(Math.max(0, window.scrollY), Math.max(0, navbarBottom - rect.top));
-      // At the top of the page the original CSS alone draws the image.
-      if (generated) photo.style.display = offset > 0 ? 'block' : 'none';
-      photo.style.translate = offset > 0 ? '0 ' + offset + 'px' : '';
-    });
-  };
-  const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(update); } };
-  syncBackgrounds();
-  update();
-  window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', () => { syncBackgrounds(); schedule(); }, { passive: true });
-  window.addEventListener('load', () => { syncBackgrounds(); schedule(); }, { once: true });
-  reducedMotion.addEventListener('change', schedule);
+  sync();
+  const observer = new ResizeObserver(sync);
+  entries.forEach(({hero, source}) => { observer.observe(hero); source?.addEventListener('load', sync); });
+  window.addEventListener('load', sync, {once:true});
+  reduced.addEventListener('change', sync);
 })();
 
 // Shared Projects navigation, also loaded on pages without homepage effects.
@@ -331,46 +329,35 @@ if ('IntersectionObserver' in window && groupRevealItems.length) {
 
 // Fetch the decorative video only after the page is ready and the hero is visible.
 const heroVideo = document.querySelector('.hero-video');
-const connection = navigator.connection;
-const canLoadHeroVideo = heroVideo && !connection?.saveData
-  && !['slow-2g', '2g', '3g'].includes(connection?.effectiveType)
-  && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (canLoadHeroVideo) {
-  let heroVisible = false;
-  let pageReady = false;
+if (heroVideo) {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const connection = navigator.connection;
+  const bounds = (heroVideo.closest('.hero-section') || heroVideo).getBoundingClientRect();
+  let heroVisible = bounds.bottom > 0 && bounds.top < window.innerHeight;
+  heroVideo.muted = true;
   const updateHeroPlayback = () => {
-    if (!pageReady || !heroVisible || document.hidden) {
+    if (!heroVisible || document.hidden || connection?.saveData || reducedMotion.matches) {
       heroVideo.pause();
       return;
     }
+    // Start as soon as media is available; never wait for window load or idle time.
     const source = heroVideo.querySelector('source[data-src]');
     if (source) {
       source.src = source.dataset.src;
       source.removeAttribute('data-src');
       heroVideo.load();
     }
-    heroVideo.play().catch(() => {});
+    if (heroVideo.paused) heroVideo.play().catch(() => {});
   };
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => {
       heroVisible = entry.isIntersecting;
       updateHeroPlayback();
-    }).observe(heroVideo);
-  } else {
-    heroVisible = true;
+    }).observe(heroVideo.closest('.hero-section') || heroVideo);
   }
   document.addEventListener('visibilitychange', updateHeroPlayback);
-  const scheduleVideo = () => {
-    const ready = () => {
-      pageReady = true;
-      updateHeroPlayback();
-    };
-    if ('requestIdleCallback' in window) requestIdleCallback(ready, { timeout: 1500 });
-    else setTimeout(ready, 400);
-  };
-  if (document.readyState === 'complete') scheduleVideo();
-  else window.addEventListener('load', scheduleVideo, { once: true });
+  reducedMotion.addEventListener('change', updateHeroPlayback);
+  updateHeroPlayback();
 }
 
 })();

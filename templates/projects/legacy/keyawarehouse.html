@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}{% include "partials/navbar_fluid.html" %}{% endblock %}
+{% block title %}Keya Warehouse | CEC{% endblock %}
+{% block meta_description %}
+<meta name="description" content="Keya Warehouse project by Century Engineering Contractors.">{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap"
+  rel="stylesheet">
+{% endblock %}
+{% block extra_css %}
+<link href="{% static 'css/epcaheadquater.css' %}?v=project-template-1" rel="stylesheet">{% endblock %}
+{% block body_attrs %} id="top"{% endblock %}
+{% block content %}
+
+<main class="project-detail">
+  <div class="project-breadcrumb">
+    <div class="container"><a href="{% url 'core:home' %}">Home</a><span>/</span><a
+        href="{% url 'projects:list' %}">Projects</a><span>/</span><strong>Keya HPP Warehouse</strong></div>
+  </div>
+  <section class="project-intro" aria-labelledby="project-title">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <div class="project-intro-content reveal"><span class="project-sector">INDUSTRIAL &amp; INFRASTRUCTURE</span>
+            <h1 id="project-title">Keya Warehouse</h1><i class="heading-rule" aria-hidden="true"></i>
+            <div class="project-description">
+              <p>CEC delivered the Keya Warehouse project through a combination of earthworks, civil works and
+                pre-engineered steel structures.</p>
+              <p>The development also incorporated fire suppression and electrical systems.</p>
+            </div>
+            <dl class="project-meta">
+              <div><i class="bi bi-geo-alt" aria-hidden="true"></i><span>
+                  <dt>LOCATION</dt>
+                  <dd>Rwanda</dd>
+                </span></div>
+              <div><i class="bi bi-buildings" aria-hidden="true"></i><span>
+                  <dt>PROJECT TYPE</dt>
+                  <dd>Industrial &amp; Warehouse Development</dd>
+                </span></div>
+              <div><i class="bi bi-calendar-check" aria-hidden="true"></i><span>
+                  <dt>STATUS</dt>
+                  <dd>Completed</dd>
+                </span></div>
+            </dl>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="project-video-wrap reveal"><img class="project-video"
+              src="{% static 'images/Keya warehouse.jpeg' %}" alt="Keya Warehouse exterior"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="project-scope" id="scope"><span class="section-kicker reveal">SCOPE OF WORK</span><i
+      class="section-rule reveal" aria-hidden="true"></i>
+    <div class="scope-grid scope-grid-adaptive" style="--scope-count: 4;">
+      <article class="scope-item reveal"><strong>01</strong><i class="bi bi-bricks" aria-hidden="true"></i>
+        <h2>EARTHWORKS &amp; CIVIL WORKS</h2>
+        <p>Execution of earthworks and civil construction required for the development of the warehouse facilities.</p>
+      </article>
+      <article class="scope-item reveal"><strong>02</strong><i class="bi bi-building-gear" aria-hidden="true"></i>
+        <h2>PRE-ENGINEERED STEEL STRUCTURES</h2>
+        <p>Delivery and erection of pre-engineered steel structures forming the principal warehouse buildings.</p>
+      </article>
+      <article class="scope-item reveal"><strong>03</strong><i class="bi bi-fire" aria-hidden="true"></i>
+        <h2>FIRE SUPPRESSION SYSTEM</h2>
+        <p>Installation of the fire suppression system serving the warehouse development.</p>
+      </article>
+      <article class="scope-item reveal"><strong>04</strong><i class="bi bi-lightning-charge" aria-hidden="true"></i>
+        <h2>ELECTRICAL INSTALLATION</h2>
+        <p>Delivery of electrical installations required to support the operation of the warehouse facilities.</p>
+      </article>
+      
+    </div>
+  </section>
+  
+</main>
+
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/epcaheadquater.js' %}?v=gallery-6"></script>
+{% endblock %}

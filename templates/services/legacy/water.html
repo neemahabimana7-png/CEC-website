@@ -4,49 +4,137 @@
 {% block google_fonts_url %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap"
+  rel="stylesheet">
 {% endblock %}
-{% block extra_css %}<link href="{% static 'css/marine.css' %}" rel="stylesheet">{% endblock %}
+{% block extra_css %}
+<link href="{% static 'css/marine.css' %}" rel="stylesheet">{% endblock %}
 {% block body_attrs %} data-service-file="water.html"{% endblock %}
 {% block content %}
 
 
-  <main>
-    <section class="marine-service" aria-labelledby="water-service-title">
-      <div class="container marine-service-container"><div class="row align-items-stretch g-4 g-xl-5">
+<main>
+  <section class="marine-service" aria-labelledby="water-service-title">
+    <div class="container marine-service-container">
+      <div class="row align-items-stretch g-4 g-xl-5">
         <div class="col-lg-7 marine-copy">
-          <nav class="service-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="{% url 'core:home' %}">Home</a></li><li><a href="{% url 'services:list' %}">Services</a></li><li aria-current="page">Water Supply &amp; Sanitation</li></ol></nav>
+          <nav class="service-breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="{% url 'core:home' %}">Home</a></li>
+              <li><a href="{% url 'services:list' %}">Services</a></li>
+              <li aria-current="page">Water Supply &amp; Sanitation</li>
+            </ol>
+          </nav>
           <header class="marine-intro">
             <h1 id="water-service-title" class="reveal-item">WATER SUPPLY &amp; <em>SANITATION</em></h1>
-            <div class="marine-description reveal-item"><p>CEC delivers engineering and construction solutions for dependable water supply, treatment and sanitation infrastructure.</p><p>Our works support healthy communities and sustainable development through quality and reliable water systems.</p></div>
+            <div class="marine-description reveal-item">
+              <p>CEC delivers engineering and construction solutions for dependable water supply, treatment and
+                sanitation infrastructure.</p>
+              <p>Our works support healthy communities and sustainable development through quality and reliable water
+                systems.</p>
+            </div>
           </header>
 
           <section class="capabilities" aria-labelledby="capabilities-title">
             <h2 id="capabilities-title">OUR CAPABILITIES <span aria-hidden="true"></span></h2>
             <div class="row g-0 capability-grid">
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-droplet-half"></i></div><div><h3>Water Treatment Plants</h3><p>Design and construction of water treatment facilities to deliver clean, safe and reliable water.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-bezier2"></i></div><div><h3>Sewerage Systems</h3><p>Construction of sewer networks, pumping stations and wastewater collection systems.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-water"></i></div><div><h3>Distribution Systems</h3><p>Construction of water distribution networks, reservoirs and booster pumping stations.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-building-check"></i></div><div><h3>Sanitation Infrastructure</h3><p>Construction of sanitation facilities, septic systems and hygiene improvement works.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></div><div><h3>Operation &amp; Maintenance Support</h3><p>Operation, maintenance and technical support to ensure long-term performance of water systems.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-patch-check"></i></div><div><h3>Testing &amp; Commissioning</h3><p>Testing, commissioning and quality assurance to ensure systems meet standards and performance.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-droplet-half"></i></div>
+                  <div>
+                    <h3>Water Treatment Plants</h3>
+                    <p>Design and construction of water treatment facilities to deliver clean, safe and reliable water.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-bezier2"></i></div>
+                  <div>
+                    <h3>Sewerage Systems</h3>
+                    <p>Construction of sewer networks, pumping stations and wastewater collection systems.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-water"></i></div>
+                  <div>
+                    <h3>Distribution Systems</h3>
+                    <p>Construction of water distribution networks, reservoirs and booster pumping stations.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-building-check"></i></div>
+                  <div>
+                    <h3>Sanitation Infrastructure</h3>
+                    <p>Construction of sanitation facilities, septic systems and hygiene improvement works.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></div>
+                  <div>
+                    <h3>Operation &amp; Maintenance Support</h3>
+                    <p>Operation, maintenance and technical support to ensure long-term performance of water systems.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-patch-check"></i></div>
+                  <div>
+                    <h3>Testing &amp; Commissioning</h3>
+                    <p>Testing, commissioning and quality assurance to ensure systems meet standards and performance.
+                    </p>
+                  </div>
+                </article>
+              </div>
             </div>
           </section>
 
-          <aside class="marine-closing reveal-item"><div class="closing-icon" aria-hidden="true"><i class="bi bi-droplet"></i></div><div><h2>CLEAN WATER. HEALTHY COMMUNITIES.<strong>BUILT FOR THE FUTURE.</strong></h2><p>We build water and sanitation infrastructure that improves lives and supports sustainable communities.</p></div></aside>
+          <aside class="marine-closing reveal-item">
+            <div class="closing-icon" aria-hidden="true"><i class="bi bi-droplet"></i></div>
+            <div>
+              <h2>CLEAN WATER. HEALTHY COMMUNITIES.<strong>BUILT FOR THE FUTURE.</strong></h2>
+              <p>We build water and sanitation infrastructure that improves lives and supports sustainable communities.
+              </p>
+            </div>
+          </aside>
         </div>
 
-        <div class="col-lg-5"><div class="project-gallery" aria-label="Water supply and sanitation projects">
-          <figure class="project-photo project-photo-keya project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/cec-about-reference.png' %}" alt="Water treatment infrastructure project" loading="eager"></div><figcaption>Water Treatment Plant</figcaption></figure>
-          <figure class="project-photo project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/water sanity.png' %}" alt="Sewerage and wastewater infrastructure" loading="lazy"></div><figcaption>Sewerage &amp; Wastewater Systems</figcaption></figure>
-          <figure class="project-photo project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/Rusizi port.jpg' %}" alt="Water distribution infrastructure" loading="lazy"></div><figcaption>Water Distribution Systems</figcaption></figure>
-        </div></div>
-      </div></div>
-    </section>
+        <div class="col-lg-5">
+          <div class="project-gallery" aria-label="Water supply and sanitation projects">
+            <figure class="project-photo project-photo-keya project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="{% static 'images/Keya pipeline.jpeg' %}"
+                  alt="Water treatment infrastructure project" loading="eager"></div>
+              <figcaption>Keya pipeline</figcaption>
+            </figure>
+            <figure class="project-photo project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="{% static 'images/water sanity.png' %}"
+                  alt="Sewerage and wastewater infrastructure" loading="lazy"></div>
+              <figcaption>Sewerage &amp; Wastewater Systems</figcaption>
+            </figure>
+            <figure class="project-photo project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="{% static 'images/Rusizi port.jpg' %}"
+                  alt="Water distribution infrastructure" loading="lazy"></div>
+              <figcaption>Water Distribution Systems</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </main>
-  
-  
+</main>
+
+
 
 {% endblock %}
 {% block scripts %}

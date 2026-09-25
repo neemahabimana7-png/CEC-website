@@ -1,6 +1,7 @@
 """Mapping of clean project slugs to their original detail-page templates."""
 
 PROJECT_TEMPLATES = {
+    "keya-warehouse": "projects/legacy/keyawarehouse.html",
     "nyabarongo-substation": "projects/legacy/nyabarongosubstation.html",
     "kilinda-substation": "projects/legacy/kilindasubstation.html",
     "akagera-game-lodge": "projects/legacy/akageragamelodge.html",
@@ -19,6 +20,7 @@ PROJECT_TEMPLATES = {
 
 # Original file names used in legacy /allprojectsdetails.html/<file>.html URLs.
 PROJECT_FILES = {v: k for k, v in {
+    "keyawarehouse": "keya-warehouse",
     "kigaliring": "kigali-ring-transmission",
     "productiveusers": "productive-users",
     "epcwest": "epc-west",

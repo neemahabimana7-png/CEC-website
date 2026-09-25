@@ -1163,6 +1163,10 @@ body:has(.engineering-milestone) { overflow-x: clip; }
     background-position: inherit;
 }
 .milestone-image-anchor {
+    /* Keep the sticky photo on its own composited layer during scrolling. */
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
     position: sticky;
     top: var(--milestone-anchor-top);
     height: 50%;
@@ -1178,5 +1182,5 @@ body:has(.engineering-milestone) { overflow-x: clip; }
     .engineering-milestone { padding-block: 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .milestone-image-anchor { position: relative; top: 0; }
+    .milestone-image-anchor { position: relative; top: 0; transform: none; will-change: auto; }
 }
