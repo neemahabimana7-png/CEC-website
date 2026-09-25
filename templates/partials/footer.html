@@ -43,7 +43,7 @@
           <li><i class="bi bi-telephone-fill"></i><a href="tel:+250786420337">+250 786 420 337</a></li>
           <li><i class="bi bi-envelope-fill"></i><a href="mailto:info@cec.rw">info@cec.rw</a></li>
         </ul><a class="cec-footer-cta"
-          href="{% if footer_cta %}{{ footer_cta }}{% else %}mailto:info@cec.rw{% endif %}">START A PROJECT <span
+          href="{% url 'contact:contact' %}">START A PROJECT <span
             aria-hidden="true">→</span></a>
       </div>
     </div>
