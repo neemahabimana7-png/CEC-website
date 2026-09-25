@@ -1,3 +1,53 @@
+// Preserve each hero's original appearance; anchor its photo only during scrolling.
+(() => {
+  const heroes = [...document.querySelectorAll('.about-hero, .services-hero, .projects-hero')]
+    .filter(hero => !hero.dataset.scrollPhotoReady);
+  if (!heroes.length) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const entries = heroes.map(hero => {
+    hero.dataset.scrollPhotoReady = 'true';
+    let photo = hero.querySelector('.projects-hero-image');
+    const generated = !photo;
+    if (generated) {
+      photo = document.createElement('div');
+      photo.setAttribute('aria-hidden', 'true');
+      photo.style.cssText = 'position:absolute;inset:0;pointer-events:none;display:none;';
+      hero.prepend(photo);
+      hero.style.position = 'relative';
+      hero.style.overflow = 'hidden';
+      const content = hero.querySelector('.container');
+      if (content) { content.style.position = 'relative'; content.style.zIndex = '1'; }
+    }
+    return { hero, photo, generated };
+  });
+  const syncBackgrounds = () => entries.forEach(({hero, photo, generated}) => {
+    if (!generated) return;
+    const style = getComputedStyle(hero);
+    for (const property of ['backgroundImage', 'backgroundPosition', 'backgroundSize', 'backgroundRepeat', 'backgroundOrigin', 'backgroundClip', 'backgroundColor']) {
+      photo.style[property] = style[property];
+    }
+  });
+  let pending = false;
+  const update = () => {
+    pending = false;
+    const navbarBottom = Math.max(0, document.querySelector('.navbar')?.getBoundingClientRect().bottom || 0);
+    entries.forEach(({hero, photo, generated}) => {
+      const rect = hero.getBoundingClientRect();
+      const offset = reducedMotion.matches ? 0 : Math.min(Math.max(0, window.scrollY), Math.max(0, navbarBottom - rect.top));
+      // At the top of the page the original CSS alone draws the image.
+      if (generated) photo.style.display = offset > 0 ? 'block' : 'none';
+      photo.style.translate = offset > 0 ? '0 ' + offset + 'px' : '';
+    });
+  };
+  const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(update); } };
+  syncBackgrounds();
+  update();
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', () => { syncBackgrounds(); schedule(); }, { passive: true });
+  window.addEventListener('load', () => { syncBackgrounds(); schedule(); }, { once: true });
+  reducedMotion.addEventListener('change', schedule);
+})();
+
 // Shared Projects navigation, also loaded on pages without homepage effects.
 (() => {
   document.querySelectorAll('.cec-projects-nav').forEach((item) => {

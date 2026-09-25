@@ -418,7 +418,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-image: linear-gradient(90deg, rgba(3, 28, 52, .97) 0%, rgba(3, 28, 52, .88) 36%, rgba(3, 28, 52, .48) 66%, rgba(3, 28, 52, .16) 100%), url('https://www.epcafrica.com/assets/images/cec1.jpg');
+    --milestone-background: linear-gradient(90deg, rgba(3, 28, 52, .97) 0%, rgba(3, 28, 52, .88) 36%, rgba(3, 28, 52, .48) 66%, rgba(3, 28, 52, .16) 100%), url('https://www.epcafrica.com/assets/images/cec1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1013,7 +1013,7 @@ body {
     .engineering-milestone {
         height: auto;
         min-height: 360px;
-        background-image: linear-gradient(90deg, rgba(3, 28, 52, .96) 0%, rgba(3, 28, 52, .88) 58%, rgba(3, 28, 52, .6) 100%), url('../images/cec-about-reference.png');
+        --milestone-background: linear-gradient(90deg, rgba(3, 28, 52, .96) 0%, rgba(3, 28, 52, .88) 58%, rgba(3, 28, 52, .6) 100%), url('../images/cec-about-reference.png');
         background-position: 42% center;
         background-size: cover;
     }
@@ -1144,4 +1144,39 @@ body {
     .team-member-rule {
         transition: none;
     }
+}
+
+/* Anchor the photo within the banner without mobile background-attachment limits. */
+body:has(.engineering-milestone) { overflow-x: clip; }
+.engineering-milestone {
+    --milestone-anchor-top: 90px;
+    overflow: clip;
+    isolation: isolate;
+    background-image: none;
+}
+.engineering-milestone::before { content: none; }
+.milestone-image-track {
+    position: absolute;
+    inset: 0 0 -100%;
+    pointer-events: none;
+    z-index: -1;
+    background-position: inherit;
+}
+.milestone-image-anchor {
+    position: sticky;
+    top: var(--milestone-anchor-top);
+    height: 50%;
+    background-image: var(--milestone-background);
+    background-position: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media (max-width: 991.98px) {
+    .engineering-milestone { --milestone-anchor-top: 74px; }
+}
+@media (max-width: 767.98px) {
+    .engineering-milestone { padding-block: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .milestone-image-anchor { position: relative; top: 0; }
 }
