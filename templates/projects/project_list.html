@@ -40,6 +40,17 @@
       </div>
 
       <div class="projects-grid">
+        {% for project in additional_projects %}
+        <article class="project-card" data-category="{{ project.category }}">
+          <img src="{% static project.image %}" alt="{{ project.image_alt }}" loading="lazy" decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>{{ project.title }}</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> {{ project.location }}</p>
+            <a href="{% url 'projects:legacy' slug=project.slug %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+        {% endfor %}
+
         
         <article class="project-card" data-category="power"><img src="{% static 'images/shango-Birembo.avif' %}"
             alt="Transmission line construction">
@@ -131,7 +142,7 @@
               bi-arrow-right"></i></a>
           </div>
         </article>
-        <article class="project-card" data-category="power"><img src="{% static 'images/nkora-mhpp.jpg' %}"
+        <article class="project-card" data-category="power"><img src="{% static 'images/keya-hpp.jpg' %}"
             alt="Hydropower works">
           <div class="project-card-body"><span>Energy Projects</span>
             <h2>Keya, Nkora &amp; Cyimbili HPP Works</h2>

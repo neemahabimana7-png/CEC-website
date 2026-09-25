@@ -19,6 +19,10 @@ PROJECT_TEMPLATES = {
 
 # Original file names used in legacy /allprojectsdetails.html/<file>.html URLs.
 PROJECT_FILES = {v: k for k, v in {
+    "kigaliring": "kigali-ring-transmission",
+    "productiveusers": "productive-users",
+    "epcwest": "epc-west",
+    "campbelge": "camp-belge-transmission",
     "nyabarongosubstation": "nyabarongo-substation",
     "kilindasubstation": "kilinda-substation",
     "akageragamelodge": "akagera-game-lodge",
