@@ -2565,3 +2565,43 @@ main {
     .navbar .cec-projects-nav.is-open > .cec-projects-menu { display: block; }
     .navbar .cec-projects-menu a { min-height: 44px; }
 }
+
+/* Preserve anchored image cropping on tablet and stacked mobile About Us. */
+@media (max-width: 991.98px) {
+    body:has(#about.cec-about) { overflow-x: clip; }
+    #about.cec-about {
+        --about-image-top: 74px;
+        --about-image-height: calc(100vh - var(--about-image-top));
+        --about-image-height: calc(100svh - var(--about-image-top));
+    }
+    #about.cec-about .cec-about-image-wrap {
+        position: relative;
+        top: auto;
+        height: auto;
+        min-height: 560px;
+        align-self: stretch;
+    }
+    #about.cec-about .cec-about-image-track {
+        display: block;
+        position: absolute;
+        inset: 0 0 calc(-1 * var(--about-image-height));
+        width: 100%;
+        height: auto;
+    }
+    #about.cec-about .cec-about-image {
+        position: sticky;
+        top: var(--about-image-top);
+        height: var(--about-image-height);
+    }
+}
+@media (max-width: 850px) {
+    #about.cec-about {
+        --about-image-height: min(60vh, 430px);
+        --about-image-height: min(60svh, 430px);
+    }
+    #about.cec-about .cec-about-image-wrap {
+        height: var(--about-image-height);
+        min-height: 0;
+        overflow: clip;
+    }
+}
