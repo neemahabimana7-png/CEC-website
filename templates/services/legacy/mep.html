@@ -4,49 +4,137 @@
 {% block google_fonts_url %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap"
+  rel="stylesheet">
 {% endblock %}
-{% block extra_css %}<link href="{% static 'css/marine.css' %}" rel="stylesheet">{% endblock %}
+{% block extra_css %}
+<link href="{% static 'css/marine.css' %}" rel="stylesheet">{% endblock %}
 {% block body_attrs %} data-service-file="MPEP.html"{% endblock %}
 {% block content %}
 
 
-  <main>
-    <section class="marine-service" aria-labelledby="mep-service-title">
-      <div class="container marine-service-container"><div class="row align-items-stretch g-4 g-xl-5">
+<main>
+  <section class="marine-service" aria-labelledby="mep-service-title">
+    <div class="container marine-service-container">
+      <div class="row align-items-stretch g-4 g-xl-5">
         <div class="col-lg-7 marine-copy">
-          <nav class="service-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="{% url 'core:home' %}">Home</a></li><li><a href="{% url 'services:list' %}">Services</a></li><li aria-current="page">Electromechanical / MEP Engineering</li></ol></nav>
+          <nav class="service-breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="{% url 'core:home' %}">Home</a></li>
+              <li><a href="{% url 'services:list' %}">Services</a></li>
+              <li aria-current="page">Electromechanical / MEP Engineering</li>
+            </ol>
+          </nav>
           <header class="marine-intro">
             <h1 id="mep-service-title" class="reveal-item">ELECTROMECHANICAL / <em>MEP ENGINEERING</em></h1>
-            <div class="marine-description reveal-item"><p>CEC delivers integrated Mechanical, Electrical and Plumbing (MEP) solutions for buildings and infrastructure projects, coordinating essential building systems from installation through commissioning.</p><p>Our MEP works are designed to enhance comfort, safety, efficiency and long-term performance of every facility we build.</p></div>
+            <div class="marine-description reveal-item">
+              <p>CEC delivers integrated Mechanical, Electrical and Plumbing (MEP) solutions for buildings and
+                infrastructure projects, coordinating essential building systems from installation through
+                commissioning.</p>
+              <p>Our MEP works are designed to enhance comfort, safety, efficiency and long-term performance of every
+                facility we build.</p>
+            </div>
           </header>
 
           <section class="capabilities" aria-labelledby="capabilities-title">
             <h2 id="capabilities-title">OUR CAPABILITIES <span aria-hidden="true"></span></h2>
             <div class="row g-0 capability-grid">
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-gear"></i></div><div><h3>Mechanical Systems</h3><p>Installation of mechanical systems including pumps, piping, equipment and associated components.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-moisture"></i></div><div><h3>Plumbing Systems</h3><p>Installation of plumbing systems, water supply, drainage, sanitary systems and fixtures.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></div><div><h3>Electrical Systems</h3><p>Power distribution, lighting, earthing, wiring and installation of electrical equipment.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-fan"></i></div><div><h3>HVAC &amp; Air Conditioning</h3><p>Supply and installation of HVAC systems for ventilation, cooling and climate control.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></div><div><h3>Fire Protection Systems</h3><p>Design and installation of fire detection, alarm and suppression systems.</p></div></article></div>
-              <div class="col-md-6 capability-wrap reveal-item"><article class="capability-item"><div class="capability-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></div><div><h3>Testing &amp; Commissioning</h3><p>Testing, inspection and commissioning of all MEP systems to ensure safety, compliance and optimal performance.</p></div></article></div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-gear"></i></div>
+                  <div>
+                    <h3>Mechanical Systems</h3>
+                    <p>Installation of mechanical systems including pumps, piping, equipment and associated components.
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-moisture"></i></div>
+                  <div>
+                    <h3>Plumbing Systems</h3>
+                    <p>Installation of plumbing systems, water supply, drainage, sanitary systems and fixtures.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-lightning-charge"></i></div>
+                  <div>
+                    <h3>Electrical Systems</h3>
+                    <p>Power distribution, lighting, earthing, wiring and installation of electrical equipment.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-fan"></i></div>
+                  <div>
+                    <h3>HVAC &amp; Air Conditioning</h3>
+                    <p>Supply and installation of HVAC systems for ventilation, cooling and climate control.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-shield-check"></i></div>
+                  <div>
+                    <h3>Fire Protection Systems</h3>
+                    <p>Design and installation of fire detection, alarm and suppression systems.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col-md-6 capability-wrap reveal-item">
+                <article class="capability-item">
+                  <div class="capability-icon" aria-hidden="true"><i class="bi bi-clipboard-check"></i></div>
+                  <div>
+                    <h3>Testing &amp; Commissioning</h3>
+                    <p>Testing, inspection and commissioning of all MEP systems to ensure safety, compliance and optimal
+                      performance.</p>
+                  </div>
+                </article>
+              </div>
             </div>
           </section>
 
-          <aside class="marine-closing reveal-item"><div class="closing-icon" aria-hidden="true"><i class="bi bi-gear-wide-connected"></i></div><div><h2>INTEGRATED SYSTEMS.<strong>ENGINEERED FOR PERFORMANCE.</strong></h2><p>CEC delivers coordinated MEP solutions that enhance building functionality, reliability and long-term performance.</p></div></aside>
+          <aside class="marine-closing reveal-item">
+            <div class="closing-icon" aria-hidden="true"><i class="bi bi-gear-wide-connected"></i></div>
+            <div>
+              <h2>INTEGRATED SYSTEMS.<strong>ENGINEERED FOR PERFORMANCE.</strong></h2>
+              <p>CEC delivers coordinated MEP solutions that enhance building functionality, reliability and long-term
+                performance.</p>
+            </div>
+          </aside>
         </div>
 
-        <div class="col-lg-5"><div class="project-gallery" aria-label="Electromechanical and MEP projects">
-          <figure class="project-photo project-photo-keya project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/cec-about-reference.png' %}" alt="CEC integrated MEP project" loading="eager"></div><figcaption>Complete MEP Works</figcaption></figure>
-          <figure class="project-photo project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/Capture.PNG' %}" alt="Infrastructure MEP installation" loading="lazy"></div><figcaption>Electrical &amp; Mechanical Systems</figcaption></figure>
-          <figure class="project-photo project-slider reveal-item" data-slider><div class="project-slides"><img class="is-active" src="{% static 'images/B58A4353.jpg' %}" alt="Electrical installation works" loading="lazy"></div><figcaption>Electrical Systems Installation</figcaption></figure>
-        </div></div>
-      </div></div>
-    </section>
+        <div class="col-lg-5">
+          <div class="project-gallery" aria-label="Electromechanical and MEP projects">
+            <figure class="project-photo project-photo-keya project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="{% static 'images/Lebanon.jpeg' %}"
+                  alt="CEC integrated MEP project" loading="eager"></div>
+              <figcaption>Lebanon Hotel</figcaption>
+            </figure>
+            <figure class="project-photo project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="{% static 'images/EPCA Headquater.avif' %}"
+                  alt="Infrastructure MEP installation" loading="lazy"></div>
+              <figcaption>EPCA Headquater</figcaption>
+            </figure>
+            <figure class="project-photo project-slider reveal-item" data-slider>
+              <div class="project-slides"><img class="is-active" src="{% static 'images/Trinity.jpeg' %}"
+                  alt="Electrical installation works" loading="lazy"></div>
+              <figcaption>Trinity International School</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </main>
-  
-  
+</main>
+
+
 
 {% endblock %}
 {% block scripts %}
