@@ -30,7 +30,8 @@
       <div class="project-filters" role="group" aria-label="Filter projects by sector">
         <button class="filter-btn active" type="button" data-filter="all"><i class="bi bi-grid"></i><span>All
             Projects</span></button>
-        <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Energy Projects</span></button>
+        <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Energy
+            Projects</span></button>
         <button class="filter-btn" type="button" data-filter="buildings"><i
             class="bi bi-buildings"></i><span>Buildings</span></button>
         <button class="filter-btn" type="button" data-filter="marine"><i class="bi bi-water"></i><span>Marine &amp;
@@ -40,18 +41,9 @@
       </div>
 
       <div class="projects-grid">
-        {% for project in additional_projects %}
-        <article class="project-card" data-category="{{ project.category }}">
-          <img src="{% static project.image %}" alt="{{ project.image_alt }}" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>{{ project.title }}</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> {{ project.location }}</p>
-            <a href="{% url 'projects:legacy' slug=project.slug %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-        {% endfor %}
+       
 
-        
+
         <article class="project-card" data-category="power"><img src="{% static 'images/shango-Birembo.avif' %}"
             alt="Transmission line construction">
           <div class="project-card-body"><span>Energy Projects</span>
@@ -88,19 +80,23 @@
           </div>
         </article>
         <article class="project-card" data-category="power">
-          <img src="{% static 'images/Kilinda station.avif' %}" alt="Kilinda Substation transformer upgrade" loading="lazy" decoding="async">
+          <img src="{% static 'images/Kilinda station.avif' %}" alt="Kilinda Substation transformer upgrade"
+            loading="lazy" decoding="async">
           <div class="project-card-body"><span>Energy Projects</span>
             <h2>Kilinda Substation Upgrade</h2>
             <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
-            <a href="{% url 'projects:legacy' slug='kilinda-substation' %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a href="{% url 'projects:legacy' slug='kilinda-substation' %}">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
           </div>
         </article>
         <article class="project-card" data-category="power">
-          <img src="{% static 'images/Nyabarongo substation.avif' %}" alt="Nyabarongo Substation transformer and site workers" loading="lazy" decoding="async">
+          <img src="{% static 'images/Nyabarongo substation.avif' %}"
+            alt="Nyabarongo Substation transformer and site workers" loading="lazy" decoding="async">
           <div class="project-card-body"><span>Energy Projects</span>
             <h2>Nyabarongo Substation</h2>
             <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
-            <a href="{% url 'projects:legacy' slug='nyabarongo-substation' %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a href="{% url 'projects:legacy' slug='nyabarongo-substation' %}">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
           </div>
         </article>
 
@@ -113,6 +109,17 @@
               bi-arrow-right"></i></a>
           </div>
         </article>
+         {% for project in additional_projects %}
+        <article class="project-card" data-category="{{ project.category }}">
+          <img src="{% static project.image %}" alt="{{ project.image_alt }}" loading="lazy" decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>{{ project.title }}</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> {{ project.location }}</p>
+            <a href="{% url 'projects:legacy' slug=project.slug %}">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
+          </div>
+        </article>
+        {% endfor %}
         <article class="project-card" data-category="buildings"><img src="{% static 'images/Trinity.jpeg' %}"
             alt="Trinity International School">
           <div class="project-card-body"><span>Buildings</span>
