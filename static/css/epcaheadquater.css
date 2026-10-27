@@ -105,3 +105,32 @@ body.lightbox-open { overflow:hidden; }
 @media (max-width: 1199.98px) { .scope-grid.scope-grid-adaptive { grid-template-columns: repeat(min(3, var(--scope-count)), minmax(0, 1fr)); } }
 @media (max-width: 767.98px) { .scope-grid.scope-grid-adaptive { grid-template-columns: repeat(min(2, var(--scope-count)), minmax(0, 1fr)); } }
 @media (max-width: 479.98px) { .scope-grid.scope-grid-adaptive { grid-template-columns: minmax(0, 1fr); } }
+
+
+/* Fractional tracks account for the gap instead of exceeding the container. */
+@media (min-width: 992px) {
+    .project-overview { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+}
+.project-overview > *, .project-features article > *, .project-meta > div > * { min-width: 0; }
+.project-meta, .project-breadcrumb, .project-features { overflow-wrap: anywhere; }
+.project-breadcrumb .container { flex-wrap: wrap; padding-block: 12px; }
+.project-tabs { top: var(--header-height, 90px); }
+.project-overview, .project-scope, .project-gallery, .project-section-banner {
+    scroll-margin-top: 80px;
+}
+@media (max-width: 767.98px) {
+    .project-description p, .scope-item p { text-align: left; }
+    .project-features article { padding: 16px 10px; gap: 12px; }
+}
+
+/* Huye–Gisagara & Gasarenda–Kitabi: reuse the detail layout with ten scope cards. */
+.project-street-lighting .project-title-highlight { color: inherit; }
+.project-street-lighting .scope-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 1px; background: #e0e4e8; }
+.project-street-lighting .scope-item { border: 0; background: #fff; }
+.project-street-lighting .scope-item p { text-align: left; }
+@media (max-width: 1199.98px) { .project-street-lighting .scope-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 767.98px) { .project-street-lighting .scope-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 479.98px) { .project-street-lighting .scope-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Show the complete street-lighting photograph at its natural proportions. */
+.project-street-lighting img.project-video { height: auto; aspect-ratio: auto; object-fit: contain; background: transparent; }

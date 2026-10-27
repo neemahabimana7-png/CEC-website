@@ -106,3 +106,17 @@ body { margin: 0; color: var(--project-ink); background: var(--project-bg); }
   .sector-band { grid-template-columns: 1fr; }
   .sector-stat, .sector-stat:nth-of-type(odd), .sector-stat:last-child { grid-column: auto; border-top: 1px solid rgba(255,255,255,.3); border-left: 0; }
 }
+
+
+/* Filters and contact details must fit narrow cards without clipping text. */
+.filter-btn { min-width: 0; overflow-wrap: anywhere; }
+.contact-option > *, .project-cta > * { min-width: 0; }
+.contact-option a { overflow-wrap: anywhere; }
+.projects-breadcrumb { flex-wrap: wrap; }
+@media (max-width: 575.98px) {
+    .projects-hero-content { grid-template-columns: minmax(0, 1fr); row-gap: 6px; }
+    .projects-hero-content > span, .projects-hero h1 { grid-column: 1; }
+    .project-filters { grid-template-columns: minmax(0, 1fr); }
+    .filter-btn { justify-content: flex-start; min-height: 56px; border-right: 0; }
+    .filter-btn:last-child { grid-column: auto; }
+}

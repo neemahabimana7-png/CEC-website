@@ -91,7 +91,7 @@ PROJECT_DETAILS = {
         "project_type": "LV/MV Lines & Service Connections",
         "status": "Completed",
         "client": "Energy Development Corporation Limited (EDCL)",
-        "image": "images/EPC WEST.avif",
+        "image": "images/EPC West.png",
         "image_alt": "CEC worker and overhead power lines at the EPC West project",
         "scope": [
             {
@@ -165,3 +165,55 @@ PROJECT_DETAILS = {
         "gallery": []
     }
 }
+
+# Street-lighting content supplied by the client; existing power-project photo.
+PROJECT_DETAILS['huye-gisagara-gasarenda-kitabi-street-lighting'] = {'slug': 'huye-gisagara-gasarenda-kitabi-street-lighting',
+ 'file': 'huyegisagara',
+ 'title': 'Huye–Gisagara & Gasarenda–Kitabi Street Lighting Projects',
+ 'title_prefix': 'Huye–Gisagara & Gasarenda–Kitabi',
+ 'title_highlight': 'Street Lighting Projects',
+ 'layout_class': 'project-street-lighting',
+ 'description': 'CEC carried out street lighting works along Huye–Gisagara Road and '
+                'Gasarenda–Kitabi Road under framework contracts for the construction of MV and LV '
+                'electrical lines, service connections, and associated works, including associated '
+                'civil works for the Gasarenda–Kitabi project.',
+ 'location': 'Huye–Gisagara & Gasarenda–Kitabi, Rwanda',
+ 'project_type': 'Street Lighting / MV & LV Electrical Lines',
+ 'status': 'Completed',
+ 'client': 'EDCL — Energy Development Corporation Limited',
+ 'image': 'images/Street lighting.jpg (1).jpeg',
+ 'image_alt': 'Roadside street-lighting poles in Rwanda',
+ 'scope': [{'icon': 'bi-map',
+            'title': 'Line Surveying',
+            'description': 'Line surveying for the Huye–Gisagara and Gasarenda–Kitabi projects.'},
+           {'icon': 'bi-tools',
+            'title': 'Excavation for Pole Foundations',
+            'description': 'Excavation for pole foundations along both project routes.'},
+           {'icon': 'bi-signpost',
+            'title': 'Erection of Poles',
+            'description': 'Erection of poles for the electrical lines and street lighting works.'},
+           {'icon': 'bi-bezier2',
+            'title': 'Stringing Works',
+            'description': 'Stringing works for the electrical lines on both projects.'},
+           {'icon': 'bi-lamp',
+            'title': 'Installation of Lamps',
+            'description': 'Installation of 278 LED streetlights along Huye–Gisagara Road and 283 '
+                           'LED streetlights along the 9.9 km Gasarenda–Kitabi project.'},
+           {'icon': 'bi-hdd-network',
+            'title': 'Transformers (Huye–Gisagara)',
+            'description': 'Four transformers included in the Huye–Gisagara project.'},
+           {'icon': 'bi-broadcast-pin',
+            'title': 'Medium Voltage (MV) Line — Huye–Gisagara',
+            'description': '1.73 km of Medium Voltage electrical line.'},
+           {'icon': 'bi-signpost-split',
+            'title': 'Low Voltage (LV) Lines — Huye–Gisagara',
+            'description': '9.76 km of Low Voltage electrical lines.'},
+           {'icon': 'bi-camera-video',
+            'title': 'Security Cameras — Gasarenda–Kitabi',
+            'description': 'Installation of security cameras as part of the associated works.'},
+           {'icon': 'bi-gear',
+            'title': 'Commissioning',
+            'description': 'Commissioning works for the electrical lines and street lighting '
+                           'installations on both projects.'}],
+ 'category': 'power',
+ 'gallery': []}

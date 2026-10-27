@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,156 +8,349 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@600;700&amp;display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="../navbar/style.css" rel="stylesheet">
   <link href="./allprojects.css" rel="stylesheet">
 </head>
+
 <body id="top">
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container navbar-inner">
-      <a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a>
+      <a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo"
+          class="navbar-logo"></a>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header"><a class="navbar-brand me-auto" href="../index.html"><img src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+        <div class="offcanvas-header"><a class="navbar-brand me-auto" href="../index.html"><img
+              src="../images/CEC LOGO.png" alt="CEC logo" class="navbar-logo"></a><button type="button"
+            class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
         <div class="offcanvas-body">
-          <ul class="navbar-nav mx-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="../navbar/aboutus.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../services/allservices.html">Services</a></li><li class="nav-item cec-projects-nav">
-  <div class="cec-projects-trigger"><a class="nav-link active" href="./allprojects.html">Projects</a><button class="cec-projects-toggle" type="button" aria-label="Toggle project categories" aria-expanded="false" aria-controls="cec-projects-menu"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
-  <ul class="cec-projects-menu" id="cec-projects-menu" aria-label="Project categories" hidden>
-    <li><a href="./allprojects.html?category=power" data-project-category="power">Energy Projects</a></li>
-    <li><a href="./allprojects.html?category=buildings" data-project-category="buildings">Buildings</a></li>
-    <li><a href="./allprojects.html?category=marine" data-project-category="marine">Marine &amp; Civil</a></li>
-    <li><a href="./allprojects.html?category=industrial" data-project-category="industrial">Industrial &amp; Infrastructure</a></li>
-  </ul>
-</li><li class="nav-item"><a class="nav-link" href="../navbar/clients.html">Clients | Partners</a></li><li class="nav-item"><a class="nav-link" href="../navbar/careers.html">Careers</a></li><li class="nav-item"><a class="nav-link" href="../navbar/news.html">News</a></li><li class="nav-item"><a class="nav-link" href="../navbar/contactus.html">Contact Us</a></li></ul>
+          <ul class="navbar-nav mx-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../navbar/aboutus.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="../services/allservices.html">Services</a></li>
+            <li class="nav-item cec-projects-nav">
+              <div class="cec-projects-trigger"><a class="nav-link active" href="./allprojects.html">Projects</a><button
+                  class="cec-projects-toggle" type="button" aria-label="Toggle project categories" aria-expanded="false"
+                  aria-controls="cec-projects-menu"><svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"
+                    focusable="false">
+                    <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" />
+                  </svg></button></div>
+              <ul class="cec-projects-menu" id="cec-projects-menu" aria-label="Project categories" hidden>
+                <li><a href="./allprojects.html?category=power" data-project-category="power">Energy Projects</a></li>
+                <li><a href="./allprojects.html?category=buildings" data-project-category="buildings">Buildings</a></li>
+                <li><a href="./allprojects.html?category=marine" data-project-category="marine">Marine &amp; Civil</a>
+                </li>
+                <li><a href="./allprojects.html?category=industrial" data-project-category="industrial">Industrial &amp;
+                    Infrastructure</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="../navbar/clients.html">Clients | Partners</a></li>
+            <li class="nav-item"><a class="nav-link" href="../navbar/careers.html">Careers</a></li>
+            <li class="nav-item"><a class="nav-link" href="../navbar/news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="../navbar/contactus.html">Contact Us</a></li>
+          </ul>
           <a href="../navbar/contactus.html" class="login-button">Get a Quote</a>
         </div>
       </div>
-      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
     </div>
   </nav>
 
   <main>
     <section class="projects-hero" aria-labelledby="projects-title">
-    <div class="projects-hero-image" aria-hidden="true"></div><div class="projects-hero-overlay" aria-hidden="true"></div>
-      <div class="container projects-hero-content"><span>OUR</span><h1 id="projects-title">PROJECTS</h1><i aria-hidden="true"></i><nav class="projects-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><strong>Projects</strong></nav></div>
+      <div class="projects-hero-image" aria-hidden="true"></div>
+      <div class="projects-hero-overlay" aria-hidden="true"></div>
+      <div class="container projects-hero-content"><span>OUR</span>
+        <h1 id="projects-title">PROJECTS</h1><i aria-hidden="true"></i>
+        <nav class="projects-breadcrumb" aria-label="Breadcrumb"><a
+            href="../index.html">Home</a><span>/</span><strong>Projects</strong></nav>
+      </div>
     </section>
 
     <section class="projects-content" aria-label="Project portfolio">
       <div class="container">
         <div class="project-filters" role="group" aria-label="Filter projects by sector">
-          <button class="filter-btn active" type="button" data-filter="all"><i class="bi bi-grid"></i><span>All Projects</span></button>
-          <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Energy Projects</span></button>
-          <button class="filter-btn" type="button" data-filter="buildings"><i class="bi bi-buildings"></i><span>Buildings</span></button>
-          <button class="filter-btn" type="button" data-filter="marine"><i class="bi bi-water"></i><span>Marine &amp; Civil</span></button>
-          <button class="filter-btn" type="button" data-filter="industrial"><i class="bi bi-building-gear"></i><span>Industrial &amp; Infrastructure</span></button>
+          <button class="filter-btn active" type="button" data-filter="all"><i class="bi bi-grid"></i><span>All
+              Projects</span></button>
+          <button class="filter-btn" type="button" data-filter="power"><i class="bi bi-broadcast-pin"></i><span>Energy
+              Projects</span></button>
+          <button class="filter-btn" type="button" data-filter="buildings"><i
+              class="bi bi-buildings"></i><span>Buildings</span></button>
+          <button class="filter-btn" type="button" data-filter="marine"><i class="bi bi-water"></i><span>Marine &amp;
+              Civil</span></button>
+          <button class="filter-btn" type="button" data-filter="industrial"><i
+              class="bi bi-building-gear"></i><span>Industrial &amp; Infrastructure</span></button>
         </div>
 
         <div class="projects-grid">
-          <article class="project-card" data-category="industrial"><img src="../static/images/Keya%20warehouse.jpeg" alt="Keya Warehouse"><div class="project-card-body"><span>Industrial &amp; Infrastructure</span><h2>Keya Warehouse</h2><p><i class="bi bi-geo-alt-fill"></i> Kanombe, Kigali</p><a href="../allprojectsdetails.html/keyawarehouse.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-        <article class="project-card" data-category="power">
-          <img src="../static/images/Kigali%20ring.avif" alt="CEC workers on a transmission tower for the Kigali Ring 110 kV line" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>Kigali Ring 110 kV Transmission Line</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Jabana–Gahanga, Kigali</p>
-            <a href="../allprojectsdetails.html/kigaliring.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-        <article class="project-card" data-category="power">
-          <img src="../static/images/Productive%20users.avif" alt="Electric lighting at a productive-user premises in Rwanda" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>Productive Users</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Rwanda</p>
-            <a href="../allprojectsdetails.html/productiveusers.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-        <article class="project-card" data-category="power">
-          <img src="../static/images/EPC%20WEST.avif" alt="CEC worker and overhead power lines at the EPC West project" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>EPC West</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Rutsiro &amp; Karongi, Western Province, Rwanda</p>
-            <a href="../allprojectsdetails.html/epcwest.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-        <article class="project-card" data-category="power">
-          <img src="../static/images/camp%20belge.avif" alt="CEC line worker at the Camp Belge 30 kV transmission project" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>Camp Belge 30 kV Transmission Line</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Camp Belge–Musanze Industrial Park</p>
-            <a href="../allprojectsdetails.html/campbelge.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-        <article class="project-card" data-category="power">
-          <img src="../static/images/Kilinda%20station.avif" alt="Kilinda Substation transformer upgrade" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>Kilinda Substation Upgrade</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
-            <a href="../allprojectsdetails.html/kilindasubstation.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-        <article class="project-card" data-category="power">
-          <img src="../static/images/Nyabarongo%20substation.avif" alt="Nyabarongo Substation transformer and site workers" loading="lazy" decoding="async">
-          <div class="project-card-body"><span>Energy Projects</span>
-            <h2>Nyabarongo Substation</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
-            <a href="../allprojectsdetails.html/nyabarongosubstation.html">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-          </div>
-        </article>
-          <article class="project-card" data-category="power"><img src="../images/B58A4353.jpg" alt="Transmission line construction"><div class="project-card-body"><span>Energy Projects</span><h2>220kV Transmission Line</h2><p><i class="bi bi-geo-alt-fill"></i> Shango – Birembo, Rwanda</p><a href="../allprojectsdetails.html/shangoproject.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="buildings"><img src="../images/cec-about-reference.png" alt="EPCA Group Headquarters"><div class="project-card-body"><span>Buildings</span><h2>EPCA Group Headquarters</h2><p><i class="bi bi-geo-alt-fill"></i> Kigali, Rwanda</p><a href="../allprojectsdetails.html/epcaheadquater.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="marine"><img src="../images/rubavu port.jpg" alt="Port of Rubavu"><div class="project-card-body"><span>Marine &amp; Civil</span><h2>Port of Rubavu</h2><p><i class="bi bi-geo-alt-fill"></i> Rubavu, Rwanda</p><a href="../allprojectsdetails.html/rubavuport.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="marine"><img src="../images/Rusizi port.jpg" alt="Rusizi Port"><div class="project-card-body"><span>Marine &amp; Civil</span><h2>Rusizi Port</h2><p><i class="bi bi-geo-alt-fill"></i> Rusizi, Rwanda</p><a href="../allprojectsdetails.html/rusiziport.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="power"><img src="../static/images/Kigali%20ring.avif"
+              alt="CEC workers on a transmission tower in Rwanda" loading="lazy">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Huye–Gisagara &amp; Gasarenda–Kitabi Street Lighting Projects</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Huye–Gisagara &amp; Gasarenda–Kitabi, Rwanda</p>
+              <a href="../allprojectsdetails.html/huyegisagara.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="industrial"><img src="../static/images/Keya%20warehouse.jpeg"
+              alt="Keya Warehouse">
+            <div class="project-card-body"><span>Industrial &amp; Infrastructure</span>
+              <h2>Keya Warehouse</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Kanombe, Kigali</p><a
+                href="../allprojectsdetails.html/keyawarehouse.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power">
+            <img src="../static/images/Kigali%20ring.avif"
+              alt="CEC workers on a transmission tower for the Kigali Ring 110 kV line" loading="lazy" decoding="async">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Kigali Ring 110 kV Transmission Line</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Jabana–Gahanga, Kigali</p>
+              <a href="../allprojectsdetails.html/kigaliring.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power">
+            <img src="../static/images/Productive%20users.avif"
+              alt="Electric lighting at a productive-user premises in Rwanda" loading="lazy" decoding="async">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Productive Users</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Rwanda</p>
+              <a href="../allprojectsdetails.html/productiveusers.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power">
+            <img src="../static/images/EPC West.png" alt="CEC worker and overhead power lines at the EPC West project"
+              loading="lazy" decoding="async">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>EPC West</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Rutsiro &amp; Karongi, Western Province, Rwanda
+              </p>
+              <a href="../allprojectsdetails.html/epcwest.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power">
+            <img src="../static/images/camp%20belge.avif"
+              alt="CEC line worker at the Camp Belge 30 kV transmission project" loading="lazy" decoding="async">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Camp Belge 30 kV Transmission Line</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Camp Belge–Musanze Industrial Park</p>
+              <a href="../allprojectsdetails.html/campbelge.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power">
+            <img src="../static/images/Kilinda%20station.avif" alt="Kilinda Substation transformer upgrade"
+              loading="lazy" decoding="async">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Kilinda Substation Upgrade</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
+              <a href="../allprojectsdetails.html/kilindasubstation.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power">
+            <img src="../static/images/Nyabarongo%20substation.avif"
+              alt="Nyabarongo Substation transformer and site workers" loading="lazy" decoding="async">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Nyabarongo Substation</h2>
+              <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kigali, Rwanda</p>
+              <a href="../allprojectsdetails.html/nyabarongosubstation.html">View Project <i class="bi bi-arrow-right"
+                  aria-hidden="true"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power"><img src="../images/B58A4353.jpg"
+              alt="Transmission line construction">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>220kV Transmission Line</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Shango – Birembo, Rwanda</p><a
+                href="../allprojectsdetails.html/shangoproject.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="buildings"><img src="../images/cec-about-reference.png"
+              alt="EPCA Group Headquarters">
+            <div class="project-card-body"><span>Buildings</span>
+              <h2>EPCA Group Headquarters</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Kigali, Rwanda</p><a
+                href="../allprojectsdetails.html/epcaheadquater.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="marine"><img src="../images/rubavu port.jpg"
+              alt="Port of Rubavu">
+            <div class="project-card-body"><span>Marine &amp; Civil</span>
+              <h2>Port of Rubavu</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Rubavu, Rwanda</p><a
+                href="../allprojectsdetails.html/rubavuport.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="marine"><img src="../images/Rusizi port.jpg" alt="Rusizi Port">
+            <div class="project-card-body"><span>Marine &amp; Civil</span>
+              <h2>Rusizi Port</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Rusizi, Rwanda</p><a
+                href="../allprojectsdetails.html/rusiziport.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
 
-          <article class="project-card" data-category="buildings"><img src="../images/rubavu2.PNG" alt="Lebanon Hotel"><div class="project-card-body"><span>Buildings</span><h2>Lebanon Hotel (3 Star)</h2><p><i class="bi bi-geo-alt-fill"></i> Remera, Kigali</p><a href="../allprojectsdetails.html/lebanonhotel.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="buildings"><img src="../images/rubavu3.PNG" alt="Trinity International School"><div class="project-card-body"><span>Buildings</span><h2>Trinity International School</h2><p><i class="bi bi-geo-alt-fill"></i> Nyarutarama, Kigali</p><a href="../allprojectsdetails.html/trinityschool.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="buildings"><img src="../images/luxury-apartments-blocks.jpg" alt="Luxury Apartments Kagarama"><div class="project-card-body"><span>Buildings</span><h2>Luxury Apartments – Kagarama</h2><p><i class="bi bi-geo-alt-fill"></i> Kagarama, Kigali</p><a href="../allprojectsdetails.html/luxury.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="buildings"><img src="../images/akagera-game-lodge.jpg" alt="Akagera Game Lodge"><div class="project-card-body"><span>Buildings</span><h2>Akagera Game Lodge</h2><p><i class="bi bi-geo-alt-fill"></i> Akagera National Park</p><a href="../allprojectsdetails.html/akageragamelodge.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="buildings"><img src="../images/rubavu2.PNG" alt="Lebanon Hotel">
+            <div class="project-card-body"><span>Buildings</span>
+              <h2>Lebanon Hotel (3 Star)</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Remera, Kigali</p><a
+                href="../allprojectsdetails.html/lebanonhotel.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="buildings"><img src="../images/rubavu3.PNG"
+              alt="Trinity International School">
+            <div class="project-card-body"><span>Buildings</span>
+              <h2>Trinity International School</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Nyarutarama, Kigali</p><a
+                href="../allprojectsdetails.html/trinityschool.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="buildings"><img src="../images/luxury-apartments-blocks.jpg"
+              alt="Luxury Apartments Kagarama">
+            <div class="project-card-body"><span>Buildings</span>
+              <h2>Luxury Apartments – Kagarama</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Kagarama, Kigali</p><a
+                href="../allprojectsdetails.html/luxury.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="buildings"><img src="../images/akagera-game-lodge.jpg"
+              alt="Akagera Game Lodge">
+            <div class="project-card-body"><span>Buildings</span>
+              <h2>Akagera Game Lodge</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Akagera National Park</p><a
+                href="../allprojectsdetails.html/akageragamelodge.html">View Project <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
 
-          <article class="project-card" data-category="buildings"><img src="../images/residential-house-kimihurura.jpg" alt="Residential House Kimihurura"><div class="project-card-body"><span>Buildings</span><h2>Residential House – Kimihurura</h2><p><i class="bi bi-geo-alt-fill"></i> Kimihurura, Kigali</p><a href="../allprojectsdetails.html/residentialhouse.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="power"><img src="../images/nkora-mhpp.jpg" alt="Hydropower works"><div class="project-card-body"><span>Energy Projects</span><h2>Keya, Nkora &amp; Cyimbili HPP Works</h2><p><i class="bi bi-geo-alt-fill"></i> Rwanda</p><a href="../allprojectsdetails.html/hppworks.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="industrial"><img src="../images/cyimbili-mhpp.jpg" alt="Kanombe Warehouses"><div class="project-card-body"><span>Industrial &amp; Infrastructure</span><h2>Kanombe Warehouses</h2><p><i class="bi bi-geo-alt-fill"></i> Kanombe, Kigali</p><a href="../allprojectsdetails.html/kanombewarehouses.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
-          <article class="project-card" data-category="marine"><img src="../images/Marineservice.jpg" alt="Karongi Auxiliary Quay"><div class="project-card-body"><span>Marine &amp; Civil</span><h2>Karongi Auxiliary Quay</h2><p><i class="bi bi-geo-alt-fill"></i> Karongi, Rwanda</p><a href="../allprojectsdetails.html/karongiquay.html">View Project <i class="bi bi-arrow-right"></i></a></div></article>
+          <article class="project-card" data-category="buildings"><img src="../images/residential-house-kimihurura.jpg"
+              alt="Residential House Kimihurura">
+            <div class="project-card-body"><span>Buildings</span>
+              <h2>Residential House – Kimihurura</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Kimihurura, Kigali</p><a
+                href="../allprojectsdetails.html/residentialhouse.html">View Project <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="power"><img src="../images/nkora-mhpp.jpg"
+              alt="Hydropower works">
+            <div class="project-card-body"><span>Energy Projects</span>
+              <h2>Keya, Nkora &amp; Cyimbili HPP Works</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Rwanda</p><a href="../allprojectsdetails.html/hppworks.html">View
+                Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="industrial"><img src="../images/cyimbili-mhpp.jpg"
+              alt="Kanombe Warehouses">
+            <div class="project-card-body"><span>Industrial &amp; Infrastructure</span>
+              <h2>Kanombe Warehouses</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Kanombe, Kigali</p><a
+                href="../allprojectsdetails.html/kanombewarehouses.html">View Project <i
+                  class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
+          <article class="project-card" data-category="marine"><img src="../images/Marineservice.jpg"
+              alt="Karongi Auxiliary Quay">
+            <div class="project-card-body"><span>Marine &amp; Civil</span>
+              <h2>Karongi Auxiliary Quay</h2>
+              <p><i class="bi bi-geo-alt-fill"></i> Karongi, Rwanda</p><a
+                href="../allprojectsdetails.html/karongiquay.html">View Project <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
         </div>
 
-       
 
-        
+
+
       </div>
     </section>
   </main>
 
-  <footer id="contact" class="cec-footer"><div class="cec-footer-accent" aria-hidden="true"></div><div class="container"><div class="row gy-5 gx-lg-5 cec-footer-main">
-    <div class="col-12 col-lg-4"><a class="cec-footer-brand" href="../index.html"><img src="../images/CEC LOGO.png" alt="Century Engineering Contractors"></a><p class="cec-footer-about">Engineering Rwanda's future through dependable civil, electrical and electromechanical solutions built to last.</p><div class="cec-footer-social"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a></div></div>
-    <div class="col-6 col-md-4 col-lg-2"><h2>Quick Links</h2><ul class="cec-footer-links"><li><a href="../index.html">Home</a></li><li><a href="../navbar/aboutus.html">About Us</a></li><li><a href="../services/allservices.html">Services</a></li><li><a href="../allprojects/allprojects.html">Projects</a></li><li><a href="../navbar/careers.html">Careers</a></li><li><a href="../navbar/news.html">News</a></li><li><a href="../navbar/contactus.html">Contact Us</a></li></ul></div>
-    <div class="col-6 col-md-4 col-lg-3"><h2>Our Services</h2><ul class="cec-footer-links"><li><a href="../servicesdetails/powertransmission.html">Power Transmission &amp; Distribution</a></li><li><a href="../servicesdetails/building.html">Building &amp; Infrastructure Development</a></li><li><a href="../servicesdetails/civil&amp;engineering.html">Civil &amp; Structural Engineering</a></li><li><a href="../servicesdetails/MPEP.html">Electromechanical / MEP Engineering</a></li><li><a href="../servicesdetails/marine.html">Marine &amp; Port Construction</a></li><li><a href="../servicesdetails/water.html">Water Supply &amp; Sanitation</a></li></ul></div>
-    <div class="col-12 col-md-4 col-lg-3"><h2>Get In Touch</h2><ul class="cec-footer-contact"><li><i class="bi bi-geo-alt-fill"></i><span>Gasabo – Gacuriro<br>Kigali, Rwanda</span></li><li><i class="bi bi-telephone-fill"></i><a href="tel:+250786420337">+250 786 420 337</a></li><li><i class="bi bi-envelope-fill"></i><a href="mailto:info@cec.rw">info@cec.rw</a></li></ul><a class="cec-footer-cta" href="../navbar/contactus.html">START A PROJECT <span>→</span></a></div>
-  </div><div class="cec-footer-bottom"><p>© 2026 Century Engineering Contractors Ltd. All rights reserved.</p><a href="#top">Back to top <i class="bi bi-arrow-up"></i></a></div></div></footer>
+  <footer id="contact" class="cec-footer">
+    <div class="cec-footer-accent" aria-hidden="true"></div>
+    <div class="container">
+      <div class="row gy-5 gx-lg-5 cec-footer-main">
+        <div class="col-12 col-lg-4"><a class="cec-footer-brand" href="../index.html"><img src="../images/CEC LOGO.png"
+              alt="Century Engineering Contractors"></a>
+          <p class="cec-footer-about">Engineering Rwanda's future through dependable civil, electrical and
+            electromechanical solutions built to last.</p>
+          <div class="cec-footer-social"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="#" aria-label="Instagram"><i
+                class="bi bi-instagram"></i></a><a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a></div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h2>Quick Links</h2>
+          <ul class="cec-footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../navbar/aboutus.html">About Us</a></li>
+            <li><a href="../services/allservices.html">Services</a></li>
+            <li><a href="../allprojects/allprojects.html">Projects</a></li>
+            <li><a href="../navbar/careers.html">Careers</a></li>
+            <li><a href="../navbar/news.html">News</a></li>
+            <li><a href="../navbar/contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <h2>Our Services</h2>
+          <ul class="cec-footer-links">
+            <li><a href="../servicesdetails/powertransmission.html">Power Transmission &amp; Distribution</a></li>
+            <li><a href="../servicesdetails/building.html">Building &amp; Infrastructure Development</a></li>
+            <li><a href="../servicesdetails/civil&amp;engineering.html">Civil &amp; Structural Engineering</a></li>
+            <li><a href="../servicesdetails/MPEP.html">Electromechanical / MEP Engineering</a></li>
+            <li><a href="../servicesdetails/marine.html">Marine &amp; Port Construction</a></li>
+            <li><a href="../servicesdetails/water.html">Water Supply &amp; Sanitation</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4 col-lg-3">
+          <h2>Get In Touch</h2>
+          <ul class="cec-footer-contact">
+            <li><i class="bi bi-geo-alt-fill"></i><span>Gasabo – Gacuriro<br>Kigali, Rwanda</span></li>
+            <li><i class="bi bi-telephone-fill"></i><a href="tel:+250786420337">+250 786 420 337</a></li>
+            <li><i class="bi bi-envelope-fill"></i><a href="mailto:info@cec.rw">info@cec.rw</a></li>
+          </ul><a class="cec-footer-cta" href="../navbar/contactus.html">START A PROJECT <span>→</span></a>
+        </div>
+      </div>
+      <div class="cec-footer-bottom">
+        <p>© 2026 Century Engineering Contractors Ltd. All rights reserved.</p><a href="#top">Back to top <i
+            class="bi bi-arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  (() => {
-    const buttons = [...document.querySelectorAll('.filter-btn')];
-    const cards = [...document.querySelectorAll('.projects-grid .project-card')];
-    const applyFilter = (requested) => {
-      const filter = buttons.some((button) => button.dataset.filter === requested) ? requested : 'all';
-      buttons.forEach((button) => {
-        const active = button.dataset.filter === filter;
-        button.classList.toggle('active', active);
-        button.setAttribute('aria-pressed', String(active));
-      });
-      cards.forEach((card) => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
-      window.dispatchEvent(new Event('cec:project-filter'));
-    };
-    buttons.forEach((button) => button.addEventListener('click', () => {
-      const url = new URL(window.location.href);
-      if (button.dataset.filter === 'all') url.searchParams.delete('category');
-      else url.searchParams.set('category', button.dataset.filter);
-      history.pushState(null, '', url);
-      applyFilter(button.dataset.filter);
-    }));
-    window.addEventListener('popstate', () => applyFilter(new URL(window.location.href).searchParams.get('category')));
-    applyFilter(new URL(window.location.href).searchParams.get('category'));
-  })();
-</script>
-<script src="../navbar/homepage.js?v=single-photo-anchor-4" data-navbar-only></script>
+    (() => {
+      const buttons = [...document.querySelectorAll('.filter-btn')];
+      const cards = [...document.querySelectorAll('.projects-grid .project-card')];
+      const applyFilter = (requested) => {
+        const filter = buttons.some((button) => button.dataset.filter === requested) ? requested : 'all';
+        buttons.forEach((button) => {
+          const active = button.dataset.filter === filter;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+        cards.forEach((card) => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
+        window.dispatchEvent(new Event('cec:project-filter'));
+      };
+      buttons.forEach((button) => button.addEventListener('click', () => {
+        const url = new URL(window.location.href);
+        if (button.dataset.filter === 'all') url.searchParams.delete('category');
+        else url.searchParams.set('category', button.dataset.filter);
+        history.pushState(null, '', url);
+        applyFilter(button.dataset.filter);
+      }));
+      window.addEventListener('popstate', () => applyFilter(new URL(window.location.href).searchParams.get('category')));
+      applyFilter(new URL(window.location.href).searchParams.get('category'));
+    })();
+  </script>
+  <script src="../navbar/homepage.js?v=single-photo-anchor-4" data-navbar-only></script>
 </body>
+
 </html>

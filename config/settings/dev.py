@@ -4,7 +4,10 @@ from .base import *  # noqa: F401,F403
 
 SETTINGS_ENV = "dev"
 
-DEBUG = os.environ.get("DEBUG", "True").lower() in ("1", "true", "yes")
+# This profile is explicitly for local development. A DEBUG=False value in
+# a shared .env must not disable runserver's static asset handling here.
+# Deployments use config.settings.prod, which always sets DEBUG=False.
+DEBUG = True
 
 SECRET_KEY = os.environ.get(
     "SECRET_KEY", "django-insecure-dev-only-key-do-not-use-in-production"

@@ -449,21 +449,6 @@ video {
     z-index: 2;
     width: 100%;
 }
-.hero-content.hero-copy-pending {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-.hero-content.hero-typing .hero-actions {
-    visibility: hidden;
-    pointer-events: none;
-}
-.hero-letter {
-    opacity: 0;
-}
-.hero-letter.is-visible {
-    opacity: 1;
-}
 .hero-copy {
     max-width: 900px;
     margin: 0 auto;
@@ -2372,17 +2357,17 @@ video {
 
 @keyframes cecNavEnter {
     from { opacity: 0; transform: translateY(-18px); }
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: none; }
 }
 
 @keyframes cecPageEnter {
     from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: none; }
 }
 
 @keyframes cecSectionReveal {
     from { opacity: .15; transform: translateY(34px); }
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: none; }
 }
 
 .navbar {
@@ -2604,4 +2589,54 @@ main {
         min-height: 0;
         overflow: clip;
     }
+}
+
+
+/* Responsive layout: keep these after the legacy breakpoint rules. */
+:root { --header-height: 90px; }
+html { scroll-padding-top: calc(var(--header-height) + 16px); }
+.navbar .nav-link, .navbar .login-button { white-space: nowrap; }
+.navbar-toggler:focus-visible, .offcanvas .btn-close:focus-visible {
+    outline: 2px solid var(--gold); outline-offset: 4px;
+}
+.cec-footer-contact li > *, .cec-about-content,
+.cec-specialization > *, .cec-achievement-item > * { min-width: 0; }
+.cec-footer-contact a, .cec-footer-contact span { overflow-wrap: anywhere; }
+.hero-video-youtube { max-width: none; }
+
+
+
+.hero-actions { flex-wrap: wrap; }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .navbar { margin: 0; border-radius: 0; }
+    .navbar .navbar-nav { gap: .25rem; }
+    .navbar .nav-link { font-size: 12px; padding-inline: .22rem !important; }
+    .navbar .login-button { font-size: 12px; margin: 0 0 0 .35rem; padding: 10px 13px; }
+    .navbar .navbar-brand { margin-right: .6rem !important; }
+    .navbar .navbar-brand img { max-height: 72px; }
+}
+@media (max-width: 991.98px) {
+    :root { --header-height: 74px; }
+    .navbar .offcanvas { height: 100vh; height: 100dvh; }
+    .navbar .offcanvas-header { flex-shrink: 0; }
+    .navbar .offcanvas-body { padding-bottom: max(28px, env(safe-area-inset-bottom)); }
+    .navbar .offcanvas .nav-link { min-height: 44px; white-space: normal; }
+    .navbar .offcanvas .login-button { flex-shrink: 0; min-height: 44px; }
+    .hero-section:has(.hero-video-youtube) {
+        height: max(620px, calc(100svh - var(--header-height)));
+    }
+    .hero-copy h1 { font-size: clamp(2rem, 7vw, 4.1rem); }
+}
+@media (max-width: 575.98px) {
+    .hero-copy h1 { font-size: clamp(2rem, 9vw, 3.2rem); }
+    .hero-copy p { font-size: 1rem; line-height: 1.6; }
+    .hero-actions .btn { min-height: 48px; min-width: 0; }
+    .cec-footer-links a { padding-block: 8px; }
+    .cec-footer-links li { margin-bottom: 4px; }
+    .cec-footer-social a { min-width: 44px; min-height: 44px; }
+}
+
+@media (max-width: 575.98px) {
+    /* Bootstrap large gutters otherwise extend beyond phone containers. */
+    main .row { --bs-gutter-x: 1.5rem; }
 }

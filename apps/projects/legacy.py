@@ -21,6 +21,7 @@ PROJECT_TEMPLATES = {
 # Original file names used in legacy /allprojectsdetails.html/<file>.html URLs.
 PROJECT_FILES = {v: k for k, v in {
     "keyawarehouse": "keya-warehouse",
+    "huyegisagara": "huye-gisagara-gasarenda-kitabi-street-lighting",
     "kigaliring": "kigali-ring-transmission",
     "productiveusers": "productive-users",
     "epcwest": "epc-west",

@@ -41,7 +41,7 @@
       </div>
 
       <div class="projects-grid">
-       
+
 
 
         <article class="project-card" data-category="power"><img src="{% static 'images/shango-Birembo.avif' %}"
@@ -109,9 +109,11 @@
               bi-arrow-right"></i></a>
           </div>
         </article>
-         {% for project in additional_projects %}
+        {# Catalog includes Huye-Gisagara & Gasarenda-Kitabi under Energy Projects. #}
+        {% for project in additional_projects %}
         <article class="project-card" data-category="{{ project.category }}">
-          <img src="{% static project.image %}" alt="{{ project.image_alt }}" loading="lazy" decoding="async">
+          {% if project.image or project.image_url %}<img src="{% if project.image_url %}{{ project.image_url }}{% else %}{% static project.image %}{% endif %}" alt="{{ project.image_alt }}" loading="lazy"
+            decoding="async">{% endif %}
           <div class="project-card-body"><span>Energy Projects</span>
             <h2>{{ project.title }}</h2>
             <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> {{ project.location }}</p>
