@@ -101,33 +101,43 @@ PROJECT_DETAILS = {
         "slug": "epc-west",
         "file": "epcwest",
         "title": "EPC West",
-        "description": "Plant design, supply and installation of low-voltage and medium-voltage lines and service connections in Rutsiro and Karongi districts, Western Province of Rwanda.",
-        "location": "Rutsiro & Karongi, Western Province, Rwanda",
-        "project_type": "LV/MV Lines & Service Connections",
+        "description": "CEC carried out the surveying, design, supply, installation, construction and commissioning of Medium Voltage (MV) and Low Voltage (LV) electrical lines and service connections in Rutsiro and Karongi Districts, Western Province of Rwanda.",
+        "location": "Rutsiro & Karongi Districts, Western Province, Rwanda",
+        "project_type": "Medium & Low Voltage Electrical Lines and Service Connections",
         "status": "Completed",
-        "client": "Energy Development Corporation Limited (EDCL)",
+        "client": "EDCL — Energy Development Corporation Limited",
         "image": "images/EPC West.png",
         "image_alt": "CEC worker and overhead power lines at the EPC West project",
         "scope": [
             {
+                "icon": "bi-map",
+                "title": "Surveying",
+                "description": "Surveying works for MV and LV electrical lines and service connections in Rutsiro and Karongi Districts."
+            },
+            {
                 "icon": "bi-pencil-square",
-                "title": "Plant Design",
-                "description": "Design of low-voltage and medium-voltage lines and service connections."
+                "title": "Design",
+                "description": "Design of Medium Voltage and Low Voltage electrical lines and service connections."
             },
             {
                 "icon": "bi-box-seam",
                 "title": "Supply",
-                "description": "Supply for the line and service connection works in Rutsiro and Karongi."
+                "description": "Supply of materials and equipment for the electrical line and service connection works."
+            },
+            {
+                "icon": "bi-signpost",
+                "title": "Installation",
+                "description": "Installation of MV and LV electrical lines and service connections."
             },
             {
                 "icon": "bi-tools",
-                "title": "Line Installation",
-                "description": "Installation of low-voltage and medium-voltage lines."
+                "title": "Construction",
+                "description": "Construction works for MV and LV electrical lines and service connections."
             },
             {
-                "icon": "bi-plug",
-                "title": "Service Connections",
-                "description": "Service connections in Rutsiro and Karongi districts, Western Province."
+                "icon": "bi-gear",
+                "title": "Commissioning",
+                "description": "Commissioning of the completed MV and LV electrical lines and service connections."
             }
         ],
         "category": "power",
