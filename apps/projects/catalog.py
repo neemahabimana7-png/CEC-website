@@ -54,29 +54,44 @@ PROJECT_DETAILS = {
     "productive-users": {
         "slug": "productive-users",
         "file": "productiveusers",
-        "title": "Productive Users",
-        "description": "Plant design, supply and installation of low-voltage and medium-voltage lines for productive users in Rwanda.",
+        "title": "MV & LV Lines for Productive Users",
+        "description": "CEC carried out plant design, surveying, supply, installation, construction and commissioning of Medium Voltage (MV) and Low Voltage (LV) electrical lines for productive users in Rwanda.",
         "location": "Rwanda",
-        "project_type": "Low- & Medium-Voltage Lines",
+        "project_type": "Medium & Low Voltage Electrical Lines",
         "status": "Completed",
-        "client": "Energy Development Corporation Limited (EDCL)",
+        "client": "EDCL — Energy Development Corporation Limited",
         "image": "images/Productive users.avif",
         "image_alt": "Electric lighting at a productive-user premises in Rwanda",
         "scope": [
             {
+                "icon": "bi-map",
+                "title": "Surveying",
+                "description": "Surveying works for the MV and LV electrical lines serving productive users in Rwanda."
+            },
+            {
                 "icon": "bi-pencil-square",
                 "title": "Plant Design",
-                "description": "Design of low-voltage and medium-voltage lines for productive users."
+                "description": "Design of the Medium Voltage and Low Voltage electrical lines."
             },
             {
                 "icon": "bi-box-seam",
                 "title": "Supply",
-                "description": "Supply for the low-voltage and medium-voltage line works."
+                "description": "Supply of materials and equipment for the MV and LV electrical line works."
+            },
+            {
+                "icon": "bi-signpost",
+                "title": "Installation",
+                "description": "Installation of Medium Voltage and Low Voltage electrical lines."
             },
             {
                 "icon": "bi-tools",
-                "title": "Line Installation",
-                "description": "Installation of low-voltage and medium-voltage lines for productive users in Rwanda."
+                "title": "Construction",
+                "description": "Construction works for the MV and LV electrical lines."
+            },
+            {
+                "icon": "bi-gear",
+                "title": "Commissioning",
+                "description": "Commissioning of the completed Medium Voltage and Low Voltage electrical lines."
             }
         ],
         "category": "power",
