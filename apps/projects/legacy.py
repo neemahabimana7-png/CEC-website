@@ -1,6 +1,11 @@
 """Mapping of clean project slugs to their original detail-page templates."""
 
 PROJECT_TEMPLATES = {
+    "camp-belge-transmission": "projects/legacy/campbelge.html",
+    "productive-users": "projects/legacy/productiveusers.html",
+    "epc-west": "projects/legacy/epcwest.html",
+    "huye-gisagara-gasarenda-kitabi-street-lighting": "projects/legacy/huyegisagara.html",
+    "kigali-ring-transmission": "projects/legacy/kigaliring.html",
     "keya-warehouse": "projects/legacy/keyawarehouse.html",
     "nyabarongo-substation": "projects/legacy/nyabarongosubstation.html",
     "kilinda-substation": "projects/legacy/kilindasubstation.html",

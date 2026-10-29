@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block navbar %}{% include "partials/navbar_fluid.html" %}{% endblock %}
+{% block title %}MV &amp; LV Lines for Productive Users | CEC{% endblock %}
+{% block meta_description %}
+<meta name="description" content="CEC carried out plant design, surveying, supply, installation, construction and commissioning of Medium Voltage (MV) and Low Voltage (LV) electrical lines for productive users in Rwanda.">{% endblock %}
+{% block google_fonts_url %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap"
+  rel="stylesheet">
+{% endblock %}
+{% block extra_css %}
+<link href="{% static 'css/epcaheadquater.css' %}?v=street-lighting-4" rel="stylesheet">{% endblock %}
+{% block body_attrs %} id="top"{% endblock %}
+{% block content %}
+<main class="project-detail ">
+  <div class="project-breadcrumb">
+    <div class="container"><a href="/">Home</a><span>/</span><a
+        href="/projects/">Projects</a><span>/</span><strong>MV &amp; LV Lines for Productive Users</strong></div>
+  </div>
+  <section class="project-intro" aria-labelledby="project-title">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <div class="project-intro-content reveal">
+            <h1 id="project-title">MV &amp; LV Lines for Productive Users</h1>
+            <i class="heading-rule" aria-hidden="true"></i>
+            <div class="project-description">
+              <p>CEC carried out plant design, surveying, supply, installation, construction and commissioning of Medium Voltage (MV) and Low Voltage (LV) electrical lines for productive users in Rwanda.</p>
+            </div>
+            <dl class="project-meta">
+              <div><i class="bi bi-geo-alt" aria-hidden="true"></i><span>
+                  <dt>LOCATION</dt>
+                  <dd>Rwanda</dd>
+                </span></div>
+              <div><i class="bi bi-buildings" aria-hidden="true"></i><span>
+                  <dt>PROJECT TYPE</dt>
+                  <dd>Medium &amp; Low Voltage Electrical Lines</dd>
+                </span></div>
+              <div><i class="bi bi-briefcase" aria-hidden="true"></i><span>
+                  <dt>STATUS</dt>
+                  <dd>Completed</dd>
+                </span></div>
+              <div><i class="bi bi-people" aria-hidden="true"></i><span>
+                  <dt>CLIENT</dt>
+                  <dd>EDCL — Energy Development Corporation Limited</dd>
+                </span></div>
+            </dl>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="project-video-wrap reveal"><img class="project-video"
+              src="/static/images/Productive%20users.avif" alt="Electric lighting at a productive-user premises in Rwanda" decoding="async"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="project-scope" id="scope" aria-labelledby="scope-title">
+    <h2 class="section-kicker reveal" id="scope-title">SCOPE OF WORK</h2><i class="section-rule reveal"
+      aria-hidden="true"></i>
+    <div class="scope-grid scope-grid-adaptive" style="--scope-count: 6;">
+      
+      <article class="scope-item reveal"><strong>01</strong><i
+          class="bi bi-map" aria-hidden="true"></i>
+        <h2>Surveying</h2>
+        <p>Surveying works for the MV and LV electrical lines serving productive users in Rwanda.</p>
+      </article>
+      
+      <article class="scope-item reveal"><strong>02</strong><i
+          class="bi bi-pencil-square" aria-hidden="true"></i>
+        <h2>Plant Design</h2>
+        <p>Design of the Medium Voltage and Low Voltage electrical lines.</p>
+      </article>
+      
+      <article class="scope-item reveal"><strong>03</strong><i
+          class="bi bi-box-seam" aria-hidden="true"></i>
+        <h2>Supply</h2>
+        <p>Supply of materials and equipment for the MV and LV electrical line works.</p>
+      </article>
+      
+      <article class="scope-item reveal"><strong>04</strong><i
+          class="bi bi-signpost" aria-hidden="true"></i>
+        <h2>Installation</h2>
+        <p>Installation of Medium Voltage and Low Voltage electrical lines.</p>
+      </article>
+      
+      <article class="scope-item reveal"><strong>05</strong><i
+          class="bi bi-tools" aria-hidden="true"></i>
+        <h2>Construction</h2>
+        <p>Construction works for the MV and LV electrical lines.</p>
+      </article>
+      
+      <article class="scope-item reveal"><strong>06</strong><i
+          class="bi bi-gear" aria-hidden="true"></i>
+        <h2>Commissioning</h2>
+        <p>Commissioning of the completed Medium Voltage and Low Voltage electrical lines.</p>
+      </article>
+      
+    </div>
+  </section>
+  
+  
+{% include "projects/partials/project_gallery.html" %}
+</main>
+{% endblock content %}
+{% block scripts %}
+<script src="{% static 'js/epcaheadquater.js' %}?v=gallery-6"></script>{% endblock %}

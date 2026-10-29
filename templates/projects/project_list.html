@@ -41,6 +41,13 @@
       </div>
 
       <div class="projects-grid">
+        <article class="project-card" data-category="buildings">
+          <img src="{% static 'images/luxury-apartments-blocks.jpg' %}" alt="Luxury Apartments in Kagarama" loading="lazy" decoding="async">
+          <div class="project-card-body"><span>Buildings</span><h2>Luxury Apartments – Kagarama</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Kagarama, Kigali</p>
+            <a href="{% url 'projects:legacy' slug='luxury-apartments' %}">View Project <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
 
 
 
@@ -109,19 +116,62 @@
               bi-arrow-right"></i></a>
           </div>
         </article>
-        {# Catalog includes Huye-Gisagara & Gasarenda-Kitabi under Energy Projects. #}
-        {% for project in additional_projects %}
-        <article class="project-card" data-category="{{ project.category }}">
-          {% if project.image or project.image_url %}<img src="{% if project.image_url %}{{ project.image_url }}{% else %}{% static project.image %}{% endif %}" alt="{{ project.image_alt }}" loading="lazy"
-            decoding="async">{% endif %}
+        
+        <article class="project-card" data-category="power">
+          <img src="/static/images/Kigali%20ring.avif" alt="CEC workers on a transmission tower for the Kigali Ring 110 kV line" loading="lazy"
+            decoding="async">
           <div class="project-card-body"><span>Energy Projects</span>
-            <h2>{{ project.title }}</h2>
-            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> {{ project.location }}</p>
-            <a href="{% url 'projects:legacy' slug=project.slug %}">View Project <i class="bi bi-arrow-right"
+            <h2>Kigali Ring 110 kV Transmission Line</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Jabana–Gahanga, Kigali</p>
+            <a href="/projects/kigali-ring-transmission/">View Project <i class="bi bi-arrow-right"
                 aria-hidden="true"></i></a>
           </div>
         </article>
-        {% endfor %}
+        
+        <article class="project-card" data-category="power">
+          <img src="/static/images/Productive%20users.avif" alt="Electric lighting at a productive-user premises in Rwanda" loading="lazy"
+            decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>MV &amp; LV Lines for Productive Users</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Rwanda</p>
+            <a href="/projects/productive-users/">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
+          </div>
+        </article>
+        
+        <article class="project-card" data-category="power">
+          <img src="/static/images/EPC%20West.png" alt="CEC worker and overhead power lines at the EPC West project" loading="lazy"
+            decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>EPC West</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Rutsiro &amp; Karongi Districts, Western Province, Rwanda</p>
+            <a href="/projects/epc-west/">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
+          </div>
+        </article>
+        
+        <article class="project-card" data-category="power">
+          <img src="/static/images/camp%20belge.avif" alt="CEC line worker at the Camp Belge 30 kV transmission project" loading="lazy"
+            decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>Camp Belge 30 kV Transmission Line</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Camp Belge–Musanze Industrial Park</p>
+            <a href="/projects/camp-belge-transmission/">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
+          </div>
+        </article>
+        
+        <article class="project-card" data-category="power">
+          <img src="/static/images/Street%20lighting.jpg%20(1).jpeg" alt="Roadside street-lighting poles in Rwanda" loading="lazy"
+            decoding="async">
+          <div class="project-card-body"><span>Energy Projects</span>
+            <h2>Huye–Gisagara &amp; Gasarenda–Kitabi Street Lighting Projects</h2>
+            <p><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Huye–Gisagara &amp; Gasarenda–Kitabi, Rwanda</p>
+            <a href="/projects/huye-gisagara-gasarenda-kitabi-street-lighting/">View Project <i class="bi bi-arrow-right"
+                aria-hidden="true"></i></a>
+          </div>
+        </article>
+        
         <article class="project-card" data-category="buildings"><img src="{% static 'images/Trinity.jpeg' %}"
             alt="Trinity International School">
           <div class="project-card-body"><span>Buildings</span>

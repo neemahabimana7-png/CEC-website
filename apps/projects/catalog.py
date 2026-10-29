@@ -1,3 +1,4 @@
+# Historical catalog retained for reference. Live project content is in templates/projects/legacy/.
 """Confirmed project content transcribed from the supplied CEC project screenshots.
 
 Completed status was confirmed by the user for these four projects.
@@ -13,7 +14,7 @@ PROJECT_DETAILS = {
         "location": "Jabana–Gahanga, Kigali",
         "project_type": "110 kV Transmission Line",
         "status": "Completed",
-        "client": "",
+        "client": "ELTEL Networks Sweden",
         "image": "images/Kigali ring.avif",
         "image_alt": "CEC workers on a transmission tower for the Kigali Ring 110 kV line",
         "scope": [

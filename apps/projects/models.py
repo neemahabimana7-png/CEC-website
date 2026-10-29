@@ -1,20 +1,88 @@
 from django.db import models
 
 
-PROJECT_CHOICES = (
-    ("akagera-game-lodge", "Akagera Game Lodge"),
-    ("epca-group-headquarters", "EPCA Group Headquarters"),
-    ("keya-nkora-cyimbili-hpp", "Keya, Nkora & Cyimbili HPP Works"),
-    ("kanombe-warehouses", "Kanombe Warehouses"),
-    ("karongi-quay", "Karongi Auxiliary Quay"),
-    ("lebanon-hotel", "Lebanon Hotel (3 Star)"),
-    ("luxury-apartments", "Luxury Apartments - Kagarama"),
-    ("residential-house-kimihurura", "Residential House - Kimihurura"),
-    ("rubavu-port", "Port of Rubavu"),
-    ("rusizi-port", "Rusizi Port"),
-    ("shango-birembo-transmission", "220kV Shango-Birembo Transmission Line"),
-    ("trinity-school", "Trinity International School"),
-)
+PROJECT_CHOICES = [
+    [
+        "shango-birembo-transmission",
+        "220kV Shango–Birembo Transmission Line"
+    ],
+    [
+        "akagera-game-lodge",
+        "Akagera Game Lodge"
+    ],
+    [
+        "camp-belge-transmission",
+        "Camp Belge 30 kV Transmission Line"
+    ],
+    [
+        "epc-west",
+        "EPC West"
+    ],
+    [
+        "epca-group-headquarters",
+        "EPCA Group Headquarters"
+    ],
+    [
+        "huye-gisagara-gasarenda-kitabi-street-lighting",
+        "Huye–Gisagara & Gasarenda–Kitabi Street Lighting Projects"
+    ],
+    [
+        "kanombe-warehouses",
+        "Kanombe Warehouses"
+    ],
+    [
+        "karongi-quay",
+        "Karongi Auxiliary Quay"
+    ],
+    [
+        "keya-warehouse",
+        "Keya Warehouse"
+    ],
+    [
+        "keya-nkora-cyimbili-hpp",
+        "Keya, Nkora & Cyimbili HPP Works"
+    ],
+    [
+        "kigali-ring-transmission",
+        "Kigali Ring 110 kV Transmission Line"
+    ],
+    [
+        "kilinda-substation",
+        "Kilinda Substation Upgrade Project"
+    ],
+    [
+        "lebanon-hotel",
+        "Lebanon Hotel (3 Star)"
+    ],
+    [
+        "luxury-apartments",
+        "Luxury Apartments – Kagarama"
+    ],
+    [
+        "productive-users",
+        "MV & LV Lines for Productive Users"
+    ],
+    [
+        "nyabarongo-substation",
+        "Nyabarongo Substation"
+    ],
+    [
+        "rubavu-port",
+        "Port of Rubavu"
+    ],
+    [
+        "residential-house-kimihurura",
+        "Residential House – Kimihurura"
+    ],
+    [
+        "rusizi-port",
+        "Rusizi Port"
+    ],
+    [
+        "trinity-school",
+        "Trinity International School"
+    ]
+]
 
 
 class ProjectPhoto(models.Model):
