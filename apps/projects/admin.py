@@ -1,11 +1,14 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import ProjectPhoto
+from .models import ProjectPhoto, PROJECT_CHOICES
 
 
 @admin.register(ProjectPhoto)
 class ProjectPhotoAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        return super().get_queryset(request).filter(project_slug__in=[slug for slug, _ in PROJECT_CHOICES])
+
     list_display = ("image_preview", "project_slug", "order", "is_active", "updated_at")
     list_editable = ("order", "is_active")
     search_fields = ("alt_text", "project_slug")

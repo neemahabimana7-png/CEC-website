@@ -55,10 +55,6 @@ PROJECT_CHOICES = [
         "Lebanon Hotel (3 Star)"
     ],
     [
-        "luxury-apartments",
-        "Luxury Apartments – Kagarama"
-    ],
-    [
         "productive-users",
         "MV & LV Lines for Productive Users"
     ],
